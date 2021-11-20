@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="bg-yellow-50" lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="static/dist/styles.css" />
+
+    <title>Maison Lacournère</title>
+  </head>
+
+  <body>
+    <nav class="bg-yellow-50 fixed py-4 top-0 w-full z-20">
+      <ul class="flex flex-row flex-wrap justify-center gap-4 sm:gap-8">
+        <li class="nav-item hidden sm:block">
+          <a href="#">Accueil</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#le-gîte">Le gîte</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#alentours">Les alentours</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#tarifs">Tarifs</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="flex flex-col gap-32 max-w-4xl mx-auto px-4">
+      <div
+        class="absolute bg-center bg-cover bg-landing brightness-50 left-0 right-0 h-screen w-full"
+      ></div>
+
+      <div
+        class="flex flex-col gap-4 h-screen items-center justify-center max-w-xl self-center text-white z-10"
+      >
+        <h1 class="font-medium font-serif text-4xl sm:text-6xl">
+          Maison Lacournère
+        </h1>
+
+        <p class="text-center text-md">
+          Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées, à
+          partir de
+          <a
+            class="decoration-2 decoration-orange-400 font-semibold underline"
+            href="#tarifs"
+            >92€/nuit</a
+          >
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4" id="le-gîte">
+        <h2>Le gîte</h2>
+
+        <p class="text-sm uppercase">8 personnes • 4 chambres</p>
+
+        <div class="columns-2 sm:columns-3 z-20">
+          <!-- Overlay -->
+          <div class="overlay" id="overlay" onclick="hideOverlay()">
+            <img />
+            <p></p>
+          </div>
+
+          <!-- Images -->
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-outside.jpg", "Façade extérieure")'
+            src="static/images/lacournere-outside.jpg"
+          />
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-outside-2.jpg", "Terrasse extérieure")'
+            src="static/images/lacournere-outside-2.jpg"
+          />
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-living-room.jpg", "Salle à manger")'
+            src="static/images/lacournere-living-room.jpg"
+          />
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-living-room-2.jpg", "Salon")'
+            src="static/images/lacournere-living-room-2.jpg"
+          />
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-bedroom.jpg", "Première chambre")'
+            src="static/images/lacournere-bedroom.jpg"
+          />
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-bedroom-2.jpg", "Deuxième chambre")'
+            src="static/images/lacournere-bedroom-2.jpg"
+          />
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-bedroom-3.jpg", "Troisième chambre")'
+            src="static/images/lacournere-bedroom-3.jpg"
+          />
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-bedroom-4.jpg", "Quatrième chambre")'
+            src="static/images/lacournere-bedroom-4.jpg"
+          />
+          <img
+            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            onclick='showOverlay("static/images/lacournere-bathroom.jpg", "Salle de bain")'
+            src="static/images/lacournere-bathroom.jpg"
+          />
+        </div>
+
+        <p>
+          Dans son écrin vert, la maison Lacournère vous invite au calme et à la
+          détente. En famille ou entre amis, nous vous accueillons à Nistos dans
+          les Hautes-Pyrénées. Petit village de montagne qui abrite une flore et
+          une faune riches et préservées. De la mi-septembre à la mi-octobre,
+          vous pourrez entendre <b class="bg-yellow-200">le brame du cerf</b>.
+          Lieu magique pour les amateurs de <b class="bg-yellow-200">pêche</b>,
+          de <b class="bg-yellow-200">randonnées</b>, de
+          <b class="bg-yellow-200">ski de fond, de piste ou de raquettes</b>,
+          d'escalade, de VTT, de vélo sur des routes qui vous mènent vers les
+          grands cols des Pyrénées. Cette maison est très bien ensoleillée, avec
+          vue sur la montagne. L'extérieur sera un espace de jeu naturel que ce
+          soit pour les grands ou pour les petits. Vous pourrez aussi apprécier
+          une bonne raclette au coin du feu et une bonne grillade en été (ou le
+          contraire). La maison est située au croisement de nombreuses activités
+          et de nombreux lieux à visiter : Saint Bertrand de Comminges, les
+          grands cols Pyrénéens, les lacs de montagne, Lourdes, l'Espagne, le
+          golf de Lannemezan, etc.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-1 flex-col gap-4">
+            <h3
+              class="decoration-2 decoration-orange-400 font-semibold underline"
+            >
+              Équipements
+            </h3>
+
+            <ul
+              class="bg-orange-100 border border-orange-200 flex flex-col rounded-md text-gray-700"
+            >
+              <li class="border-b border-orange-200">
+                <button
+                  class="accordion-header"
+                  onclick='toggleAccordion("accordion-panel-1")'
+                >
+                  <span>Rez-de-chaussée</span>
+                  <img class="h-4" src="static/icons/chevron-down.svg" />
+                </button>
+
+                <div class="accordion-panel" id="accordion-panel-1">
+                  <p>
+                    Une cuisine équipée, un lave vaisselle, un four électrique,
+                    un micro-ondes, un réfrigérateur-congélateur, des cafetières
+                    (filtre et senseo), un grille-pain, un appareil à raclettes
+                    et grill, un appareil à fondue. De la vaisselle et des
+                    ustensiles.
+                    <br /><br />
+                    Un salon équipé d’une télévision et du wifi. Une cheminée
+                    avec insert vous apportera chaleur et réconfort. Chauffage
+                    électrique dans toutes les pièces (voir
+                    <a class="underline" href="#tarifs">les tarifs</a> pour
+                    l'électricité et le bois de chauffage). <br /><br />Un WC,
+                    une douche et un cellier.
+                  </p>
+                </div>
+              </li>
+
+              <li class="border-b border-orange-200">
+                <button
+                  class="accordion-header"
+                  onclick='toggleAccordion("accordion-panel-2")'
+                >
+                  <span>Premier étage</span>
+                  <img class="h-4" src="static/icons/chevron-down.svg" />
+                </button>
+
+                <div class="accordion-panel" id="accordion-panel-2">
+                  <p>4 grandes chambres : <br /><br /></p>
+                  <ul class="list-disc list-inside">
+                    <li>
+                      La première avec un lit en 140 et une couette en 220*240,
+                    </li>
+                    <li>
+                      La deuxième avec un lit en 180 et une couette en 220*240
+                    </li>
+                    <li>
+                      La troisième avec un lit en 140 et une couette en 220*240,
+                    </li>
+                    <li>
+                      Et la dernière avec 2 lits en 90 et une couette en 140*200
+                    </li>
+                  </ul>
+                  <p>
+                    <br />Des couvertures supplémentaires, des cintres, une
+                    salle de bains, un WC indépendant, une petite bibliothèque
+                    avec livres et jeux de société.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <button
+                  class="accordion-header"
+                  onclick='toggleAccordion("accordion-panel-3")'
+                >
+                  <span>Équipements divers</span>
+                  <img class="h-4" src="static/icons/chevron-down.svg" />
+                </button>
+
+                <div class="accordion-panel" id="accordion-panel-3">
+                  <ul class="list-disc list-inside">
+                    <li>Un lave linge</li>
+                    <li>
+                      Mise à disposition d'un étendoir à linge, table et fer à
+                      repasser
+                    </li>
+                    <li>
+                      Mise à disposition de matériel de puériculture : lit
+                      parapluie, matelas à langer, chaise haute
+                    </li>
+                    <li>Un barbecue</li>
+                    <li>Un salon de jardin</li>
+                    <li>Un parking</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-1 flex-col gap-4">
+            <h3
+              class="decoration-2 decoration-orange-400 font-semibold underline"
+            >
+              Accès
+            </h3>
+
+            <iframe
+              class="rounded-md"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.110770045928!2d0.45339461567200656!3d43.018055579148246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc33353bc16473137!2zNDPCsDAxJzA1LjAiTiAwwrAyNycyMC4xIkU!5e0!3m2!1sen!2sfr!4v1637588573165!5m2!1sen!2sfr"
+              height="200"
+              loading="lazy"
+            ></iframe>
+
+            <p>
+              La maison Lacournère se situe au
+              <a
+                class="external-link"
+                href="https://goo.gl/maps/o3EzvP17C7uAA8zw6"
+                target="_blank"
+                >26, route du Sausset, 65150 Nistos</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4" id="alentours">
+        <h2>Les alentours</h2>
+
+        <p>
+          Découvrez les activités de la région. Cliquez sur les offices du
+          tourisme ci-dessous pour trouver des idées qui pourront enrichir votre
+          séjour.
+        </p>
+
+        <div class="columns-2 md:columns-3">
+          <a
+            class="location-card"
+            href="https://tourisme-neste-barousse.fr/"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Office du Tourisme de Neste-Barousse</p>
+              <p class="italic text-xs">Saint-Laurent de Neste</p>
+            </div>
+            <p class="location-tag">~10km</p>
+          </a>
+
+          <a
+            class="location-card"
+            href="https://coeurdespyrenees.com/"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Office du Tourisme du Cœur des Pyrénées</p>
+              <p class="italic text-xs">Lannemezan</p>
+            </div>
+            <p class="location-tag">~25km</p>
+          </a>
+
+          <a
+            class="location-card"
+            href="https://www.ville-bagneresdebigorre.fr/office-de-tourisme"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Office du Tourisme de Bagnères-de-Bigorre</p>
+              <p class="italic text-xs">Bagnères-de-Bigorre</p>
+            </div>
+            <p class="location-tag">~45km</p>
+          </a>
+
+          <a
+            class="location-card"
+            href="https://www.saintlary.com/ete/infos-pratiques/office-de-tourisme"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Office du Tourisme de Saint-Lary-Soulan</p>
+              <p class="italic text-xs">Saint-Lary-Soulan</p>
+            </div>
+            <p class="location-tag">~45km</p>
+          </a>
+
+          <a
+            class="location-card"
+            href="https://www.pyrenees2vallees.com/vallee-du-louron"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Office du Tourisme de la vallée du Louron</p>
+              <p class="italic text-xs">Loundenvielle</p>
+            </div>
+            <p class="location-tag">~50km</p>
+          </a>
+
+          <a
+            class="location-card"
+            href="https://www.pyrenees31.com"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Office du Tourisme de Bagnères-de-Luchon</p>
+              <p class="italic text-xs">Bagnères-de-Luchon</p>
+            </div>
+            <p class="location-tag">~50km</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4" id="tarifs">
+        <h2>Tarifs</h2>
+
+        <p>
+          Nous vous proposons des tarifs à la semaine et pour les week-end.
+          N'hésitez pas à
+          <a class="underline" href="#contact">nous contacter</a> pour plus
+          d'informations.
+        </p>
+
+        <div class="border border-black flex flex-col gap-8 p-8 rounded-md">
+          <div class="flex flex-col sm:flex-row gap-8">
+            <div class="flex flex-1 flex-col gap-4">
+              <h3 class="font-serif text-center text-2xl">À la semaine</h3>
+
+              <table>
+                <tbody>
+                  <tr class="border-b border-black">
+                    <td class="px-2 py-1">Vacances d'été</td>
+                    <td class="px-2 py-1 text-center">950€</td>
+                  </tr>
+                  <tr class="border-b border-black">
+                    <td class="px-2 py-1">Nöel ou premier de l'an</td>
+                    <td class="px-2 py-1 text-center">1500€</td>
+                  </tr>
+                  <tr class="border-b border-black">
+                    <td class="px-2 py-1">Vacances printemps et automne</td>
+                    <td class="px-2 py-1 text-center">850€</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-1">Hors vacances</td>
+                    <td class="px-2 py-1 text-center">650€</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="flex flex-1 flex-col gap-4">
+              <h3 class="font-serif text-center text-2xl">
+                Week-end (hors vacances scolaires)
+              </h3>
+
+              <table>
+                <tbody>
+                  <tr class="border-b border-black">
+                    <td class="px-2 py-1">2 nuits</td>
+                    <td class="px-2 py-1 text-center">350€</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-1">3 nuits</td>
+                    <td class="px-2 py-1 text-center">450€</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <ul>
+            <li>
+              Électricité • 0.15€/kwh, consommation facturée selon relevé de
+              compteur effectué à l’arrivée et au départ
+            </li>
+            <li>
+              Bois • Facturé au prix de 60€ le stère au prorata de la
+              consommation
+            </li>
+            <li>Ménage fin de séjour : 150 € • Caution : 500 €</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4" id="contact">
+        <h2>Contact</h2>
+
+        <ul>
+          <li>
+            Par téléphone au :
+            <a class="external-link" href="tel:0671973479">06 71 97 34 79</a>
+          </li>
+          <li>
+            Par mail à l'adresse :
+            <a class="external-link" href="mailto:anne-marie.fontan@wanadoo.fr"
+              >anne-marie.fontan@wanadoo.fr</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <p class="pb-4 text-center text-xs">
+        Site web -
+        <a class="external-link" href="https://github.com/remyduthu/lacournere"
+          >@remyduthu</a
+        >
+        <br />© 2021 Maison Lacournère. Tous droits réservés.
+      </p>
+    </main>
+  </body>
+
+  <script>
+    const closeAccordionPanels = () => {
+      const panels = document.getElementsByClassName("accordion-panel")
+
+      for (let i = 0; i < panels.length; i++) {
+        const panel = panels[i]
+
+        panel.style.display = "none"
+      }
+    }
+
+    const toggleAccordion = id => {
+      const panel = document.getElementById(id)
+
+      if (panel.style.display === "block") {
+        panel.style.display = "none"
+      } else {
+        closeAccordionPanels()
+
+        panel.style.display = "block"
+      }
+    }
+
+    const hideOverlay = () => {
+      const overlay = document.getElementById("overlay")
+
+      overlay.style.opacity = 0
+      overlay.style.visibility = "hidden"
+    }
+
+    const showOverlay = (image, caption) => {
+      const overlay = document.getElementById("overlay")
+
+      const img = overlay.getElementsByTagName("img")[0]
+      img.setAttribute("src", image)
+
+      const p = overlay.getElementsByTagName("p")[0]
+      p.innerHTML = caption
+
+      overlay.style.opacity = 1
+      overlay.style.visibility = "visible"
+    }
+  </script>
+</html>
