@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html class="bg-yellow-50" lang="fr">
+<html class="bg-orange-50" lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="La maison Lacournère est un gîte des Hautes-Pyrénées situé à Nistos."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://lacournere.fr" />
+    <meta property="og:title" content="Maison Lacournère | Gite à Nistos" />
+    <meta
+      property="og:description"
+      content="La maison Lacournère est un gîte des Hautes-Pyrénées situé à Nistos."
+    />
+    <meta name="twitter:title" content="Maison Lacournère | Gite à Nistos" />
+    <meta
+      name="twitter:description"
+      content="La maison Lacournère est un gîte des Hautes-Pyrénées situé à Nistos."
+    />
 
     <link rel="stylesheet" href="static/dist/styles.css" />
 
-    <title>Maison Lacournère</title>
+    <title>Maison Lacournère | Gîte à Nistos</title>
   </head>
 
   <body>
-    <nav class="bg-yellow-50 fixed py-4 top-0 w-full z-20">
+    <nav class="bg-orange-50 fixed py-4 top-0 w-full z-20">
       <ul class="flex flex-row flex-wrap justify-center gap-4 sm:gap-8">
         <li class="nav-item hidden sm:block">
           <a href="#">Accueil</a>
@@ -21,7 +37,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="#alentours">Les alentours</a>
+          <a href="#activités">Activités</a>
         </li>
 
         <li class="nav-item">
@@ -34,9 +50,9 @@
       </ul>
     </nav>
 
-    <main class="flex flex-col gap-32 max-w-4xl mx-auto px-4">
+    <main class="flex flex-col gap-20 max-w-4xl mx-auto px-4">
       <div
-        class="absolute bg-center bg-cover bg-landing brightness-50 left-0 right-0 h-screen w-full"
+        class="absolute bg-center bg-cover bg-landing left-0 right-0 h-screen w-full"
       ></div>
 
       <div
@@ -49,9 +65,7 @@
         <p class="text-center text-md">
           Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées, à
           partir de
-          <a
-            class="decoration-2 decoration-orange-400 font-semibold underline"
-            href="#tarifs"
+          <a class="decoration-2 font-semibold underline" href="#tarifs"
             >92€/nuit</a
           >
         </p>
@@ -60,72 +74,78 @@
       <div class="flex flex-col gap-4" id="le-gîte">
         <h2>Le gîte</h2>
 
-        <p class="text-sm uppercase">8 personnes • 4 chambres</p>
+        <p class="text-xs uppercase">8 personnes • 4 chambres</p>
 
-        <div class="columns-2 sm:columns-3 z-20">
+        <div class="columns-2 gap-x-2 sm:columns-3">
           <!-- Overlay -->
-          <div class="overlay" id="overlay" onclick="hideOverlay()">
-            <img />
-            <p></p>
+          <div
+            class="duration-150 fixed flex flex-col gap-4 h-full invisible items-center justify-center left-0 opacity-0 top-0 transition-all w-full z-30"
+            id="overlay"
+            onclick="hideOverlay()"
+            style="background-color: rgba(0, 0, 0, 0.75)"
+          >
+            <img
+              class="h-auto w-auto"
+              style="max-width: 90%; max-height: 90%"
+            />
+            <p class="decoration-2 text-sm text-white underline"></p>
           </div>
 
           <!-- Images -->
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-outside.jpg", "Façade extérieure")'
             src="static/images/lacournere-outside.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-outside-2.jpg", "Terrasse extérieure")'
             src="static/images/lacournere-outside-2.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-living-room.jpg", "Salle à manger")'
             src="static/images/lacournere-living-room.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-living-room-2.jpg", "Salon")'
             src="static/images/lacournere-living-room-2.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-bedroom.jpg", "Première chambre")'
             src="static/images/lacournere-bedroom.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-bedroom-2.jpg", "Deuxième chambre")'
             src="static/images/lacournere-bedroom-2.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-bedroom-3.jpg", "Troisième chambre")'
             src="static/images/lacournere-bedroom-3.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-bedroom-4.jpg", "Quatrième chambre")'
             src="static/images/lacournere-bedroom-4.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-4 rounded-md w-full"
+            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
             onclick='showOverlay("static/images/lacournere-bathroom.jpg", "Salle de bain")'
             src="static/images/lacournere-bathroom.jpg"
           />
         </div>
 
-        <p>
+        <p class="text-justify">
           Dans son écrin vert, la maison Lacournère vous invite au calme et à la
           détente. En famille ou entre amis, nous vous accueillons à Nistos dans
           les Hautes-Pyrénées. Petit village de montagne qui abrite une flore et
           une faune riches et préservées. De la mi-septembre à la mi-octobre,
-          vous pourrez entendre <b class="bg-yellow-200">le brame du cerf</b>.
-          Lieu magique pour les amateurs de <b class="bg-yellow-200">pêche</b>,
-          de <b class="bg-yellow-200">randonnées</b>, de
-          <b class="bg-yellow-200">ski de fond, de piste ou de raquettes</b>,
+          vous pourrez entendre le brame du cerf. Lieu magique pour les amateurs
+          de pêche, de randonnées, de ski de fond, de piste ou de raquettes,
           d'escalade, de VTT, de vélo sur des routes qui vous mènent vers les
           grands cols des Pyrénées. Cette maison est très bien ensoleillée, avec
           vue sur la montagne. L'extérieur sera un espace de jeu naturel que ce
@@ -139,16 +159,15 @@
 
         <div class="flex flex-col sm:flex-row gap-4">
           <div class="flex flex-1 flex-col gap-4">
-            <h3
-              class="decoration-2 decoration-orange-400 font-semibold underline"
-            >
-              Équipements
-            </h3>
+            <h3 class="font-semibold">Équipements</h3>
 
-            <ul
-              class="bg-orange-100 border border-orange-200 flex flex-col rounded-md text-gray-700"
-            >
-              <li class="border-b border-orange-200">
+            <p>
+              La maison Lacournère est entièrement équipée afin de simplifier
+              votre séjour.
+            </p>
+
+            <ul class="border border-stone-400 flex flex-col rounded-md">
+              <li class="border-b border-stone-400">
                 <button
                   class="accordion-header"
                   onclick='toggleAccordion("accordion-panel-1")'
@@ -159,23 +178,22 @@
 
                 <div class="accordion-panel" id="accordion-panel-1">
                   <p>
-                    Une cuisine équipée, un lave vaisselle, un four électrique,
-                    un micro-ondes, un réfrigérateur-congélateur, des cafetières
-                    (filtre et senseo), un grille-pain, un appareil à raclettes
-                    et grill, un appareil à fondue. De la vaisselle et des
-                    ustensiles.
+                    Cuisine équipée, lave vaisselle, four électrique,
+                    micro-ondes, réfrigérateur-congélateur, cafetières (filtre
+                    et senseo), grille-pain, appareil à raclettes et grill,
+                    appareil à fondue. Vaisselle et des ustensiles.
                     <br /><br />
-                    Un salon équipé d’une télévision et du wifi. Une cheminée
-                    avec insert vous apportera chaleur et réconfort. Chauffage
+                    Salon équipé d’une télévision et du wifi. Cheminée avec
+                    insert vous apportera chaleur et réconfort. Chauffage
                     électrique dans toutes les pièces (voir
                     <a class="underline" href="#tarifs">les tarifs</a> pour
-                    l'électricité et le bois de chauffage). <br /><br />Un WC,
-                    une douche et un cellier.
+                    l'électricité et le bois de chauffage). <br /><br />WC,
+                    douche et cellier.
                   </p>
                 </div>
               </li>
 
-              <li class="border-b border-orange-200">
+              <li class="border-b border-stone-400">
                 <button
                   class="accordion-header"
                   onclick='toggleAccordion("accordion-panel-2")'
@@ -188,22 +206,26 @@
                   <p>4 grandes chambres : <br /><br /></p>
                   <ul class="list-disc list-inside">
                     <li>
-                      La première avec un lit en 140 et une couette en 220*240,
+                      Lit en 140 et une couette en
+                      <span class="diagonal-fractions">220/240</span>,
                     </li>
                     <li>
-                      La deuxième avec un lit en 180 et une couette en 220*240
+                      Lit en 180 et une couette en
+                      <span class="diagonal-fractions">220/240</span>,
                     </li>
                     <li>
-                      La troisième avec un lit en 140 et une couette en 220*240,
+                      Lit en 140 et une couette en
+                      <span class="diagonal-fractions">220/240</span>,
                     </li>
                     <li>
-                      Et la dernière avec 2 lits en 90 et une couette en 140*200
+                      2 lits en 90 et une couette en
+                      <span class="diagonal-fractions">140/200</span>
                     </li>
                   </ul>
                   <p>
-                    <br />Des couvertures supplémentaires, des cintres, une
-                    salle de bains, un WC indépendant, une petite bibliothèque
-                    avec livres et jeux de société.
+                    <br />Couvertures supplémentaires, cintres, salle de bains,
+                    WC indépendant, petite bibliothèque avec livres et jeux de
+                    société.
                   </p>
                 </div>
               </li>
@@ -219,18 +241,12 @@
 
                 <div class="accordion-panel" id="accordion-panel-3">
                   <ul class="list-disc list-inside">
-                    <li>Un lave linge</li>
-                    <li>
-                      Mise à disposition d'un étendoir à linge, table et fer à
-                      repasser
-                    </li>
-                    <li>
-                      Mise à disposition de matériel de puériculture : lit
-                      parapluie, matelas à langer, chaise haute
-                    </li>
-                    <li>Un barbecue</li>
-                    <li>Un salon de jardin</li>
-                    <li>Un parking</li>
+                    <li>Lave linge</li>
+                    <li>Étendoir à linge, table et fer à repasser</li>
+                    <li>Matériel de puériculture</li>
+                    <li>Barbecue</li>
+                    <li>Salon de jardin</li>
+                    <li>Parking</li>
                   </ul>
                 </div>
               </li>
@@ -238,18 +254,7 @@
           </div>
 
           <div class="flex flex-1 flex-col gap-4">
-            <h3
-              class="decoration-2 decoration-orange-400 font-semibold underline"
-            >
-              Accès
-            </h3>
-
-            <iframe
-              class="rounded-md"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.110770045928!2d0.45339461567200656!3d43.018055579148246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc33353bc16473137!2zNDPCsDAxJzA1LjAiTiAwwrAyNycyMC4xIkU!5e0!3m2!1sen!2sfr!4v1637588573165!5m2!1sen!2sfr"
-              height="200"
-              loading="lazy"
-            ></iframe>
+            <h3 class="font-semibold">Accès</h3>
 
             <p>
               La maison Lacournère se situe au
@@ -260,22 +265,177 @@
                 >26, route du Sausset, 65150 Nistos</a
               >.
             </p>
+
+            <iframe
+              class="border border-stone-400 rounded-md"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.110770045928!2d0.45339461567200656!3d43.018055579148246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc33353bc16473137!2zNDPCsDAxJzA1LjAiTiAwwrAyNycyMC4xIkU!5e0!3m2!1sen!2sfr!4v1637588573165!5m2!1sen!2sfr"
+              height="200"
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-4" id="alentours">
-        <h2>Les alentours</h2>
+      <div class="flex flex-col gap-4" id="activités">
+        <h2>Activités</h2>
 
         <p>
-          Découvrez les activités de la région. Cliquez sur les offices du
-          tourisme ci-dessous pour trouver des idées qui pourront enrichir votre
-          séjour.
+          Découvrez les activités de la région. Cliquez sur les activités
+          ci-dessous pour trouver des idées qui pourront enrichir votre séjour.
         </p>
 
         <div class="columns-2 md:columns-3">
           <a
-            class="location-card"
+            class="location-card-indigo"
+            href="https://nistos-ski.fr"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Station de ski nordique de Nistos-Seich</p>
+              <p class="italic text-xs">Nistos-Seich</p>
+            </div>
+            <p class="location-tag-indigo">~15km</p>
+          </a>
+
+          <a
+            class="location-card-indigo"
+            href="https://www.visorando.com/randonnee-nistos.html"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Randonnées pédestres et VTT autour de Nistos-Seich</p>
+              <p class="italic text-xs">Nistos-Seich</p>
+            </div>
+            <p class="location-tag-indigo">~15km</p>
+          </a>
+
+          <a
+            class="location-card-indigo"
+            href="https://www.n-py.com/"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Stations de ski alpin de la vallée</p>
+              <p class="italic text-xs">
+                Saint-Lary, Piau, Peyragudes, Val-Louron...
+              </p>
+            </div>
+            <p class="location-tag-indigo">~40km</p>
+          </a>
+
+          <a
+            class="location-card-indigo"
+            href="https://www.parc-lannemezan.com/"
+            target="_blank"
+          >
+            <div class="flex flex-col gap-0">
+              <p>Parc de Loisirs de la Demi-Lune</p>
+              <p class="italic text-xs">Lannemezan</p>
+            </div>
+            <p class="location-tag-indigo">~25km</p>
+          </a>
+
+          <div class="location-card-indigo">
+            <div class="flex flex-col gap-0">
+              <p>Monuments historiques</p>
+              <p class="italic text-xs">
+                <a
+                  class="external-link"
+                  href="https://grottesdegargas.fr/"
+                  target="_blank"
+                  >Les grottes de Gargas</a
+                >,
+                <a
+                  class="external-link"
+                  href="https://www.chateaudemauvezin.fr/"
+                  target="_blank"
+                  >le château de Mauvezin</a
+                >,
+                <a
+                  class="external-link"
+                  href="https://gouffre-esparros.fr/"
+                  target="_blank"
+                  >le gouffre d'Esparos</a
+                >,
+                <a
+                  class="external-link"
+                  href="https://www.st-bertrand.com/"
+                  target="_blank"
+                  >la cité médiévale de Saint-Bertrand de Comminges</a
+                >...
+              </p>
+            </div>
+            <p class="location-tag-indigo">~25km</p>
+          </div>
+
+          <div class="location-card-indigo">
+            <div class="flex flex-col gap-0">
+              <p>Espaces aquatiques</p>
+              <p class="italic text-xs">
+                <a
+                  class="external-link"
+                  href="https://ocybelles.fr/"
+                  target="_blank"
+                  >Les Ocybelles</a
+                >,
+                <a
+                  class="external-link"
+                  href="https://www.balnea.fr"
+                  target="_blank"
+                  >Balnéa</a
+                >,
+                <a
+                  class="external-link"
+                  href="https://www.aquensis.fr"
+                  target="_blank"
+                  >Aquensis</a
+                >...
+              </p>
+            </div>
+          </div>
+
+          <div class="location-card-indigo">
+            <div class="flex flex-col gap-0">
+              <p>Grands sites Pyrénéens</p>
+              <p class="italic text-xs">
+                <a
+                  class="external-link"
+                  href="https://picdumidi.com"
+                  target="_blank"
+                  >Le pic du Midi</a
+                >,
+                <a
+                  class="external-link"
+                  href="https://www.luz.org/fr/les-incontournables/les-grands-sites/cirque-de-gavarnie/"
+                  target="_blank"
+                  >le cirque de Gavarnie</a
+                >,
+                <a
+                  class="external-link"
+                  href="https://www.tourisme-hautes-pyrenees.com/offre/fiche/les-lacs-du-neouvielle/ITIMID065FS00003"
+                  target="_blank"
+                  >les lacs du Néouvielle</a
+                >,
+                <a
+                  class="external-link"
+                  href="https://www.lourdes.fr/"
+                  target="_blank"
+                  >la ville de Lourdes</a
+                >...
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Si vous ne parvenez pas à trouver votre bonheur parmi les activités
+          proposées, n'hésitez pas à consulter les sites des offices du tourisme
+          des alentours.
+        </p>
+
+        <div class="columns-2 md:columns-3">
+          <a
+            class="location-card-orange"
             href="https://tourisme-neste-barousse.fr/"
             target="_blank"
           >
@@ -283,11 +443,11 @@
               <p>Office du Tourisme de Neste-Barousse</p>
               <p class="italic text-xs">Saint-Laurent de Neste</p>
             </div>
-            <p class="location-tag">~10km</p>
+            <p class="location-tag-orange">~10km</p>
           </a>
 
           <a
-            class="location-card"
+            class="location-card-orange"
             href="https://coeurdespyrenees.com/"
             target="_blank"
           >
@@ -295,11 +455,11 @@
               <p>Office du Tourisme du Cœur des Pyrénées</p>
               <p class="italic text-xs">Lannemezan</p>
             </div>
-            <p class="location-tag">~25km</p>
+            <p class="location-tag-orange">~25km</p>
           </a>
 
           <a
-            class="location-card"
+            class="location-card-orange"
             href="https://www.ville-bagneresdebigorre.fr/office-de-tourisme"
             target="_blank"
           >
@@ -307,11 +467,11 @@
               <p>Office du Tourisme de Bagnères-de-Bigorre</p>
               <p class="italic text-xs">Bagnères-de-Bigorre</p>
             </div>
-            <p class="location-tag">~45km</p>
+            <p class="location-tag-orange">~45km</p>
           </a>
 
           <a
-            class="location-card"
+            class="location-card-orange"
             href="https://www.saintlary.com/ete/infos-pratiques/office-de-tourisme"
             target="_blank"
           >
@@ -319,11 +479,11 @@
               <p>Office du Tourisme de Saint-Lary-Soulan</p>
               <p class="italic text-xs">Saint-Lary-Soulan</p>
             </div>
-            <p class="location-tag">~45km</p>
+            <p class="location-tag-orange">~45km</p>
           </a>
 
           <a
-            class="location-card"
+            class="location-card-orange"
             href="https://www.pyrenees2vallees.com/vallee-du-louron"
             target="_blank"
           >
@@ -331,11 +491,11 @@
               <p>Office du Tourisme de la vallée du Louron</p>
               <p class="italic text-xs">Loundenvielle</p>
             </div>
-            <p class="location-tag">~50km</p>
+            <p class="location-tag-orange">~50km</p>
           </a>
 
           <a
-            class="location-card"
+            class="location-card-orange"
             href="https://www.pyrenees31.com"
             target="_blank"
           >
@@ -343,7 +503,7 @@
               <p>Office du Tourisme de Bagnères-de-Luchon</p>
               <p class="italic text-xs">Bagnères-de-Luchon</p>
             </div>
-            <p class="location-tag">~50km</p>
+            <p class="location-tag-orange">~50km</p>
           </a>
         </div>
       </div>

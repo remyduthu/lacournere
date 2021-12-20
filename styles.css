@@ -6,7 +6,6 @@
   .accordion-header {
     @apply duration-300
       flex flex-row
-      hover:bg-orange-200 hover:rounded-md hover:scale-105
       items-center
       justify-between
       p-2
@@ -19,38 +18,7 @@
   }
 
   .external-link {
-    @apply after:content-['_↗'] font-normal text-blue-500;
-  }
-
-  .overlay {
-    @apply duration-150
-      fixed
-      flex
-      flex-col
-      gap-4
-      h-full
-      invisible
-      items-center
-      justify-center
-      left-0
-      opacity-0
-      top-0
-      transition-all
-      w-full
-      z-30;
-
-    background-color: rgba(0, 0, 0, 0.75);
-  }
-
-  .overlay img {
-    @apply h-auto rounded-sm w-auto;
-
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  .overlay p {
-    @apply decoration-2 decoration-orange-400 text-sm text-white underline;
+    @apply after:content-['_↗'] font-normal hover:underline text-blue-500;
   }
 
   .nav-item {
@@ -62,7 +30,21 @@
       uppercase;
   }
 
-  .location-card {
+  .location-card-indigo {
+    @apply bg-indigo-100
+      border border-indigo-200
+      duration-300
+      flex flex-col items-start justify-between
+      gap-2
+      hover:scale-95
+      px-4 py-2
+      rounded-md
+      text-gray-700
+      mb-4
+      w-full;
+  }
+
+  .location-card-orange {
     @apply bg-orange-100
       border border-orange-200
       duration-300
@@ -76,7 +58,11 @@
       w-full;
   }
 
-  .location-tag {
+  .location-tag-indigo {
+    @apply px-2 text-white text-sm bg-indigo-400 rounded-md;
+  }
+
+  .location-tag-orange {
     @apply px-2 text-white text-sm bg-orange-400 rounded-md;
   }
 
@@ -85,6 +71,6 @@
   }
 
   h2 {
-    @apply font-semibold text-lg sm:tracking-widest uppercase;
+    @apply font-semibold text-xl sm:tracking-widest uppercase;
   }
 }
