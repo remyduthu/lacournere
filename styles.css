@@ -73,4 +73,8 @@
   h2 {
     @apply font-semibold text-xl sm:tracking-widest uppercase;
   }
+
+  main img {
+    content-visibility: auto;
+  }
 }

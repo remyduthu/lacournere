@@ -539,6 +539,9 @@ h2 {
     letter-spacing: 0.1em;
   }
 }
+main img {
+    content-visibility: auto;
+  }
 .visible {
   visibility: visible;
 }
