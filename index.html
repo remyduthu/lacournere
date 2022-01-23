@@ -7,23 +7,15 @@
       name="description"
       content="La maison Lacournère est un gîte des Hautes-Pyrénées situé à Nistos."
     />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://lacournere.fr" />
-    <meta property="og:title" content="Maison Lacournère | Gite à Nistos" />
-    <meta
-      property="og:description"
-      content="La maison Lacournère est un gîte des Hautes-Pyrénées situé à Nistos."
-    />
-    <meta name="twitter:title" content="Maison Lacournère | Gite à Nistos" />
-    <meta
-      name="twitter:description"
-      content="La maison Lacournère est un gîte des Hautes-Pyrénées situé à Nistos."
-    />
+    <meta name="theme-color" content="#FFF7ED" />
 
     <link rel="stylesheet" href="static/dist/styles.css" />
 
     <title>Maison Lacournère | Gîte à Nistos</title>
   </head>
+
+  <!-- Reference: https://github.com/aFarkas/lazysizes -->
+  <script src="lazysizes.min.js" async></script>
 
   <body>
     <nav class="bg-orange-50 fixed py-4 top-0 w-full z-20">
@@ -52,9 +44,7 @@
 
     <main class="flex flex-col gap-20 max-w-4xl mx-auto px-4">
       <div
-        class="absolute bg-center bg-cover bg-landing left-0 right-0 h-screen w-full"
-        decoding="async"
-        loading="lazy"
+        class="absolute bg-center bg-cover bg-landing lazyload left-0 right-0 h-screen w-full"
       ></div>
 
       <div
@@ -87,9 +77,8 @@
             style="background-color: rgba(0, 0, 0, 0.75)"
           >
             <img
+              alt="Image en plein écran"
               class="h-auto w-auto"
-              decoding="async"
-              loading="lazy"
               style="max-width: 90%; max-height: 90%"
             />
             <p class="decoration-2 text-sm text-white underline"></p>
@@ -97,124 +86,112 @@
 
           <!-- Images -->
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Vue panoramique depuis la station nordique de Nistos-Seich"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/nistos.jpg"
             onclick='showOverlay(
               "static/images/nistos.jpg",
               "Vue panoramique depuis la station nordique de Nistos-Seich"
               )'
-            src="static/images/nistos.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Vue panoramique depuis la station nordique de Nistos-Seich"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/nistos-2.jpg"
             onclick='showOverlay(
               "static/images/nistos-2.jpg",
               "Vue panoramique depuis la station nordique de Nistos-Seich"
             )'
-            src="static/images/nistos-2.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Vue panoramique depuis la station nordique de Nistos-Seich"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/nistos-3.jpg"
             onclick='showOverlay(
               "static/images/nistos-3.jpg",
               "Vue panoramique depuis la station nordique de Nistos-Seich"
             )'
-            src="static/images/nistos-3.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Façade extérieure"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-outside.jpg"
             onclick='showOverlay(
               "static/images/lacournere-outside.jpg",
               "Façade extérieure"
             )'
-            src="static/images/lacournere-outside.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Terrasse extérieure"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-outside-2.jpg"
             onclick='showOverlay(
               "static/images/lacournere-outside-2.jpg",
               "Terrasse extérieure"
             )'
-            src="static/images/lacournere-outside-2.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Salle à manger"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-living-room.jpg"
             onclick='showOverlay(
               "static/images/lacournere-living-room.jpg",
               "Salle à manger"
             )'
-            src="static/images/lacournere-living-room.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Salon"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-living-room-2.jpg"
             onclick='showOverlay(
               "static/images/lacournere-living-room-2.jpg",
               "Salon"
             )'
-            src="static/images/lacournere-living-room-2.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Première chambre"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-bedroom.jpg"
             onclick='showOverlay(
               "static/images/lacournere-bedroom.jpg",
               "Première chambre"
             )'
-            src="static/images/lacournere-bedroom.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Deuxième chambre"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-bedroom-2.jpg"
             onclick='showOverlay(
               "static/images/lacournere-bedroom-2.jpg",
               "Deuxième chambre"
             )'
-            src="static/images/lacournere-bedroom-2.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Troisième chambre"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-bedroom-3.jpg"
             onclick='showOverlay(
               "static/images/lacournere-bedroom-3.jpg",
               "Troisième chambre"
             )'
-            src="static/images/lacournere-bedroom-3.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Quatrième chambre"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-bedroom-4.jpg"
             onclick='showOverlay(
               "static/images/lacournere-bedroom-4.jpg",
               "Quatrième chambre"
             )'
-            src="static/images/lacournere-bedroom-4.jpg"
           />
           <img
-            class="duration-300 hover:brightness-75 mb-2 rounded-md w-full"
-            decoding="async"
-            loading="lazy"
+            alt="Salle de bain"
+            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
+            data-src="static/images/lacournere-bathroom.jpg"
             onclick='showOverlay(
               "static/images/lacournere-bathroom.jpg",
               "Salle de bain"
             )'
-            src="static/images/lacournere-bathroom.jpg"
           />
         </div>
 
@@ -252,7 +229,11 @@
                   onclick='toggleAccordion("accordion-panel-1")'
                 >
                   <span>Rez-de-chaussée</span>
-                  <img class="h-4" src="static/icons/chevron-down.svg" />
+                  <img
+                    alt="Voir le rez-de-chaussée"
+                    class="h-4 lazyload"
+                    data-src="static/icons/chevron-down.svg"
+                  />
                 </button>
 
                 <div class="accordion-panel" id="accordion-panel-1">
@@ -278,7 +259,11 @@
                   onclick='toggleAccordion("accordion-panel-2")'
                 >
                   <span>Premier étage</span>
-                  <img class="h-4" src="static/icons/chevron-down.svg" />
+                  <img
+                    alt="Voir le premier étage"
+                    class="h-4 lazyload"
+                    data-src="static/icons/chevron-down.svg"
+                  />
                 </button>
 
                 <div class="accordion-panel" id="accordion-panel-2">
@@ -315,7 +300,11 @@
                   onclick='toggleAccordion("accordion-panel-3")'
                 >
                   <span>Équipements divers</span>
-                  <img class="h-4" src="static/icons/chevron-down.svg" />
+                  <img
+                    alt="Voir les équipements divers"
+                    class="h-4 lazyload"
+                    data-src="static/icons/chevron-down.svg"
+                  />
                 </button>
 
                 <div class="accordion-panel" id="accordion-panel-3">
@@ -340,6 +329,7 @@
               <a
                 class="external-link"
                 href="https://goo.gl/maps/o3EzvP17C7uAA8zw6"
+                rel="noopener"
                 target="_blank"
                 >26, route du Sausset, 65150 Nistos</a
               >.
@@ -347,8 +337,9 @@
 
             <iframe
               class="border border-stone-400 rounded-md"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.110770045928!2d0.45339461567200656!3d43.018055579148246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc33353bc16473137!2zNDPCsDAxJzA1LjAiTiAwwrAyNycyMC4xIkU!5e0!3m2!1sen!2sfr!4v1637588573165!5m2!1sen!2sfr"
               height="200"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.110770045928!2d0.45339461567200656!3d43.018055579148246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc33353bc16473137!2zNDPCsDAxJzA1LjAiTiAwwrAyNycyMC4xIkU!5e0!3m2!1sen!2sfr!4v1637588573165!5m2!1sen!2sfr"
+              title="Localisation de la Maison Lacournère"
             ></iframe>
           </div>
         </div>
@@ -420,24 +411,28 @@
                 <a
                   class="external-link"
                   href="https://grottesdegargas.fr/"
+                  rel="noopener"
                   target="_blank"
                   >Les grottes de Gargas</a
                 >,
                 <a
                   class="external-link"
                   href="https://www.chateaudemauvezin.fr/"
+                  rel="noopener"
                   target="_blank"
                   >le château de Mauvezin</a
                 >,
                 <a
                   class="external-link"
                   href="https://gouffre-esparros.fr/"
+                  rel="noopener"
                   target="_blank"
                   >le gouffre d'Esparos</a
                 >,
                 <a
                   class="external-link"
                   href="https://www.st-bertrand.com/"
+                  rel="noopener"
                   target="_blank"
                   >la cité médiévale de Saint-Bertrand de Comminges</a
                 >...
@@ -453,18 +448,21 @@
                 <a
                   class="external-link"
                   href="https://ocybelles.fr/"
+                  rel="noopener"
                   target="_blank"
                   >Les Ocybelles</a
                 >,
                 <a
                   class="external-link"
                   href="https://www.balnea.fr"
+                  rel="noopener"
                   target="_blank"
                   >Balnéa</a
                 >,
                 <a
                   class="external-link"
                   href="https://www.aquensis.fr"
+                  rel="noopener"
                   target="_blank"
                   >Aquensis</a
                 >...
@@ -479,24 +477,28 @@
                 <a
                   class="external-link"
                   href="https://picdumidi.com"
+                  rel="noopener"
                   target="_blank"
                   >Le pic du Midi</a
                 >,
                 <a
                   class="external-link"
                   href="https://www.luz.org/fr/les-incontournables/les-grands-sites/cirque-de-gavarnie/"
+                  rel="noopener"
                   target="_blank"
                   >le cirque de Gavarnie</a
                 >,
                 <a
                   class="external-link"
                   href="https://www.tourisme-hautes-pyrenees.com/offre/fiche/les-lacs-du-neouvielle/ITIMID065FS00003"
+                  rel="noopener"
                   target="_blank"
                   >les lacs du Néouvielle</a
                 >,
                 <a
                   class="external-link"
                   href="https://www.lourdes.fr/"
+                  rel="noopener"
                   target="_blank"
                   >la ville de Lourdes</a
                 >...
@@ -515,6 +517,7 @@
           <a
             class="location-card-orange"
             href="https://tourisme-neste-barousse.fr/"
+            rel="noopener"
             target="_blank"
           >
             <div class="flex flex-col gap-0">
@@ -527,6 +530,7 @@
           <a
             class="location-card-orange"
             href="https://coeurdespyrenees.com/"
+            rel="noopener"
             target="_blank"
           >
             <div class="flex flex-col gap-0">
@@ -539,6 +543,7 @@
           <a
             class="location-card-orange"
             href="https://www.ville-bagneresdebigorre.fr/office-de-tourisme"
+            rel="noopener"
             target="_blank"
           >
             <div class="flex flex-col gap-0">
@@ -551,6 +556,7 @@
           <a
             class="location-card-orange"
             href="https://www.saintlary.com/ete/infos-pratiques/office-de-tourisme"
+            rel="noopener"
             target="_blank"
           >
             <div class="flex flex-col gap-0">
@@ -563,6 +569,7 @@
           <a
             class="location-card-orange"
             href="https://www.pyrenees2vallees.com/vallee-du-louron"
+            rel="noopener"
             target="_blank"
           >
             <div class="flex flex-col gap-0">
@@ -575,6 +582,7 @@
           <a
             class="location-card-orange"
             href="https://www.pyrenees31.com"
+            rel="noopener"
             target="_blank"
           >
             <div class="flex flex-col gap-0">
