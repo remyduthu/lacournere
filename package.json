@@ -1,15 +1,14 @@
 {
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.2",
     "husky": "^7.0.4",
-    "lint-staged": "^12.0.3",
+    "lint-staged": "^12.3.2",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
     "postcss-import": "^14.0.2",
     "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.7",
-    "watch": "^1.0.2"
+    "tailwindcss": "^3.0.17"
   },
   "husky": {
     "hooks": {
@@ -20,7 +19,6 @@
     "*.{css,js,html}": "prettier --write"
   },
   "scripts": {
-    "build": "postcss styles.css -o static/dist/styles.css",
-    "dev": "watch 'yarn run build'"
+    "build": "postcss styles.css -o static/dist/styles.css"
   }
 }
