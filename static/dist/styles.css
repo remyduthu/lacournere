@@ -541,6 +541,8 @@ video {
   margin-bottom: 1rem;
   display: flex;
   width: 100%;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
@@ -568,6 +570,8 @@ video {
   margin-bottom: 1rem;
   display: flex;
   width: 100%;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
@@ -702,9 +706,6 @@ main img {
 .max-w-4xl {
   max-width: 56rem;
 }
-.max-w-lg {
-  max-width: 32rem;
-}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -788,17 +789,9 @@ main img {
 .p-8 {
   padding: 2rem;
 }
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -815,10 +808,6 @@ main img {
 }
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 .text-4xl {
   font-size: 2.25rem;

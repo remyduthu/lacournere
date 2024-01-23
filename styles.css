@@ -33,6 +33,7 @@
   .location-card-indigo {
     @apply bg-indigo-100
       border border-indigo-200
+      break-inside-avoid
       duration-300
       flex flex-col items-start justify-between
       gap-2
@@ -47,6 +48,7 @@
   .location-card-orange {
     @apply bg-orange-100
       border border-orange-200
+      break-inside-avoid
       duration-300
       flex flex-col items-start justify-between
       gap-2
