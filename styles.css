@@ -1,80 +1,74 @@
 @import "tailwindcss";
 
-@layer components {
-  .accordion-header {
-    @apply duration-300
-      flex flex-row
-      items-center
-      justify-between
-      p-2
-      rounded-md
-      w-full;
-  }
+.accordion-header {
+  @apply duration-300
+    flex flex-row
+    items-center
+    justify-between
+    p-2
+    rounded-md
+    w-full;
+}
 
-  .accordion-panel {
-    @apply hidden p-2;
-  }
+.accordion-panel {
+  @apply hidden p-2;
+}
 
-  .external-link {
-    @apply after:content-['_↗'] font-normal hover:underline text-blue-500;
-  }
+.external-link {
+  @apply after:content-['_↗'] font-normal hover:underline text-blue-500;
+}
 
-  .nav-item {
-    @apply duration-300
-      hover:bg-orange-100
-      text-center text-xs sm:tracking-widest
-      p-2
-      rounded-md
-      uppercase;
-  }
+.nav-item {
+  @apply duration-300
+    hover:bg-orange-100
+    text-center text-xs sm:tracking-widest
+    p-2
+    rounded-md
+    uppercase;
+}
 
-  .location-card-indigo {
-    @apply bg-indigo-100
-      border border-indigo-200
-      break-inside-avoid
-      duration-300
-      flex flex-col items-start justify-between
-      gap-2
-      hover:scale-95
-      px-4 py-2
-      rounded-md
-      text-gray-700
-      mb-4
-      w-full;
-  }
+.location-card-indigo {
+  @apply bg-indigo-100
+    border border-indigo-200
+    break-inside-avoid
+    duration-300
+    flex flex-col items-start justify-between
+    gap-2
+    hover:scale-95
+    px-4 py-2
+    rounded-md
+    text-gray-700
+    mb-4
+    w-full;
+}
 
-  .location-card-orange {
-    @apply bg-orange-100
-      border border-orange-200
-      break-inside-avoid
-      duration-300
-      flex flex-col items-start justify-between
-      gap-2
-      hover:scale-95
-      px-4 py-2
-      rounded-md
-      text-gray-700
-      mb-4
-      w-full;
-  }
+.location-card-orange {
+  @apply bg-orange-100
+    border border-orange-200
+    break-inside-avoid
+    duration-300
+    flex flex-col items-start justify-between
+    gap-2
+    hover:scale-95
+    px-4 py-2
+    rounded-md
+    text-gray-700
+    mb-4
+    w-full;
+}
 
-  .location-tag-indigo {
-    @apply px-2 text-white text-sm bg-indigo-400 rounded-md;
-  }
+.location-tag-indigo {
+  @apply px-2 text-white text-sm bg-indigo-400 rounded-md;
+}
 
-  .location-tag-orange {
-    @apply px-2 text-white text-sm bg-orange-400 rounded-md;
-  }
+.location-tag-orange {
+  @apply px-2 text-white text-sm bg-orange-400 rounded-md;
+}
 
-  body {
-    @apply font-light tracking-wide;
-  }
+body {
+  @apply font-light tracking-wide;
+}
 
-  h2 {
-    @apply font-semibold text-xl sm:tracking-widest uppercase;
-  }
-
-  main img {
-    content-visibility: auto;
-  }
+h2 {
+  @apply font-semibold text-xl sm:tracking-widest uppercase;
 }
