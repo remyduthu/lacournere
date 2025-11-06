@@ -5,50 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="La maison Lacournère est un gîte des Hautes-Pyrénées situé à Nistos."
+      content="Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées. Maison de montagne entièrement équipée avec vue panoramique. Idéal pour ski, randonnées et activités en famille. À partir de 100 €/nuit."
     />
+    <meta
+      name="keywords"
+      content="gîte Nistos, location vacances Hautes-Pyrénées, gîte 4 étoiles, hébergement montagne, location 8 personnes, ski Pyrénées, randonnée Nistos, vacances Comminges"
+    />
+    <meta name="author" content="Maison Lacournère" />
     <meta name="theme-color" content="#FFF7ED" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://lacournere.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lacournere.com/" />
+    <meta
+      property="og:title"
+      content="Maison Lacournère | Gîte 4 étoiles à Nistos — Hautes-Pyrénées"
+    />
+    <meta
+      property="og:description"
+      content="Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées. Maison de montagne entièrement équipée avec vue panoramique. À partir de 100 €/nuit."
+    />
+    <meta
+      property="og:image"
+      content="https://lacournere.com/static/images/landing.jpg"
+    />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://lacournere.com/" />
+    <meta
+      name="twitter:title"
+      content="Maison Lacournère | Gîte 4 étoiles à Nistos — Hautes-Pyrénées"
+    />
+    <meta
+      name="twitter:description"
+      content="Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées. Maison de montagne entièrement équipée avec vue panoramique. À partir de 100 €/nuit."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lacournere.com/static/images/landing.jpg"
+    />
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="FR-65" />
+    <meta name="geo.placename" content="Nistos" />
+    <meta name="geo.position" content="43.018056;0.455556" />
+    <meta name="ICBM" content="43.018056, 0.455556" />
 
     <link rel="stylesheet" href="static/dist/styles.css" />
 
-    <title>Maison Lacournère | Gîte à Nistos</title>
+    <title>Maison Lacournère | Gîte 4 étoiles à Nistos — Hautes-Pyrénées</title>
   </head>
 
   <!-- Reference: https://github.com/aFarkas/lazysizes -->
   <script src="lazysizes.min.js" async></script>
 
   <body>
-    <nav class="bg-orange-50 fixed py-4 top-0 w-full z-20">
-      <ul class="flex flex-row flex-wrap justify-center gap-4 sm:gap-8">
-        <li class="nav-item hidden sm:block">
-          <a href="#">Accueil</a>
-        </li>
+    <header>
+      <nav
+        class="bg-orange-50 fixed py-4 top-0 w-full z-20"
+        aria-label="Navigation principale"
+      >
+        <ul class="flex flex-row flex-wrap justify-center gap-4 sm:gap-8">
+          <li class="nav-item hidden sm:block">
+            <a href="#">Accueil</a>
+          </li>
 
-        <li class="nav-item">
-          <a href="#le-gîte">Le gîte</a>
-        </li>
+          <li class="nav-item">
+            <a href="#le-gîte">Le gîte</a>
+          </li>
 
-        <li class="nav-item">
-          <a href="#activités">Activités</a>
-        </li>
+          <li class="nav-item">
+            <a href="#activités">Activités</a>
+          </li>
 
-        <li class="nav-item">
-          <a href="#tarifs">Tarifs</a>
-        </li>
+          <li class="nav-item">
+            <a href="#tarifs">Tarifs</a>
+          </li>
 
-        <li class="nav-item">
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
+          <li class="nav-item">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <main class="flex flex-col gap-20 max-w-4xl mx-auto px-4">
       <img
         class="absolute lazyload left-0 right-0 h-screen w-full"
         src="static/images/landing.jpg"
+        alt="Vue de Nistos dans les Hautes-Pyrénées"
       />
 
-      <div
+      <section
+        aria-label="Présentation"
         class="flex flex-col gap-4 h-screen items-center justify-center max-w-xl self-center text-white z-10"
       >
         <h1 class="font-medium font-serif text-4xl sm:text-6xl">
@@ -59,13 +112,17 @@
           Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées, à
           partir de
           <a class="decoration-2 font-semibold underline" href="#tarifs"
-            >100 €/nuit</a
+            >100 €/nuit</a
           >
         </p>
-      </div>
+      </section>
 
-      <div class="flex flex-col gap-4" id="le-gîte">
-        <h2>Le gîte</h2>
+      <section
+        class="flex flex-col gap-4"
+        id="le-gîte"
+        aria-labelledby="heading-gite"
+      >
+        <h2 id="heading-gite">Le gîte</h2>
 
         <p class="text-xs uppercase">8 personnes • 4 chambres</p>
 
@@ -338,15 +395,20 @@
             <iframe
               class="border border-stone-400 rounded-md"
               height="200"
+              loading="lazy"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.110770045928!2d0.45339461567200656!3d43.018055579148246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc33353bc16473137!2zNDPCsDAxJzA1LjAiTiAwwrAyNycyMC4xIkU!5e0!3m2!1sen!2sfr!4v1637588573165!5m2!1sen!2sfr"
               title="Localisation de la Maison Lacournère"
             ></iframe>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="flex flex-col gap-4" id="activités">
-        <h2>Activités</h2>
+      <section
+        class="flex flex-col gap-4"
+        id="activités"
+        aria-labelledby="heading-activites"
+      >
+        <h2 id="heading-activites">Activités</h2>
 
         <p>
           Découvrez les activités de la région. Cliquez sur les activités
@@ -596,10 +658,14 @@
             <p class="location-tag-orange">~50km</p>
           </a>
         </div>
-      </div>
+      </section>
 
-      <div class="flex flex-col gap-4" id="tarifs">
-        <h2>Tarifs</h2>
+      <section
+        class="flex flex-col gap-4"
+        id="tarifs"
+        aria-labelledby="heading-tarifs"
+      >
+        <h2 id="heading-tarifs">Tarifs</h2>
 
         <p>
           Nous vous proposons des tarifs à la semaine et pour les week-end.
@@ -616,15 +682,19 @@
               Les lits seront faits à votre arrivée. Le linge de toilette est
               fourni.
             </li>
-            <li>Caution • 500 €</li>
+            <li>Caution • 500 €</li>
             <li>Location minimum 2 nuits</li>
-            <li>Bois • 70 € le stère au prorata de la consommation</li>
+            <li>Bois • 70 € le stère au prorata de la consommation</li>
           </ul>
         </div>
-      </div>
+      </section>
 
-      <div class="flex flex-col gap-4" id="contact">
-        <h2>Contact</h2>
+      <section
+        class="flex flex-col gap-4"
+        id="contact"
+        aria-labelledby="heading-contact"
+      >
+        <h2 id="heading-contact">Contact</h2>
 
         <ul>
           <li>
@@ -638,17 +708,86 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
 
-      <p class="pb-4 text-center text-xs">
-        Site web -
-        <a class="external-link" href="https://github.com/remyduthu/lacournere"
-          >@remyduthu</a
-        >
-        <br />© 2025 Maison Lacournère. Tous droits réservés.
-      </p>
+      <footer>
+        <p class="pb-4 text-center text-xs">
+          Site web -
+          <a
+            class="external-link"
+            href="https://github.com/remyduthu/lacournere"
+            >@remyduthu</a
+          >
+          <br />© 2025 Maison Lacournère. Tous droits réservés.
+        </p>
+      </footer>
     </main>
   </body>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Maison Lacournère",
+      "description": "Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées. Maison de montagne entièrement équipée avec vue panoramique.",
+      "image": "https://lacournere.com/static/images/landing.jpg",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "4"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "26 route du Sausset",
+        "addressLocality": "Nistos",
+        "postalCode": "65150",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "43.018056",
+        "longitude": "0.455556"
+      },
+      "url": "https://lacournere.com",
+      "telephone": "+33671973479",
+      "email": "anne-marie.fontan@wanadoo.fr",
+      "priceRange": "€€",
+      "petsAllowed": false,
+      "numberOfRooms": 4,
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Wifi gratuit",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Parking gratuit",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Cuisine équipée",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Cheminée",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Barbecue",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Jardin",
+          "value": true
+        }
+      ]
+    }
+  </script>
 
   <script>
     const closeAccordionPanels = () => {

@@ -1,0 +1,5 @@
+# robots.txt for gite.lacournere.fr
+User-agent: *
+Allow: /
+
+Sitemap: https://gite.lacournere.fr/sitemap.xml
