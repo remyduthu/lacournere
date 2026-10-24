@@ -1,15 +1,15 @@
 {
   "private": true,
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.16",
-    "autoprefixer": "^10.4.21",
+    "@tailwindcss/postcss": "^4.3.3",
+    "autoprefixer": "^10.6.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.6",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "postcss-import": "^16.1.1",
-    "prettier": "^3.6.2",
-    "tailwindcss": "^4.1.16"
+    "lint-staged": "^17.6.0",
+    "postcss": "^8.5.31",
+    "postcss-cli": "^12.0.0",
+    "postcss-import": "^17.0.1",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^4.3.3"
   },
   "husky": {
     "hooks": {
@@ -21,5 +21,6 @@
   },
   "scripts": {
     "build": "postcss styles.css -o static/dist/styles.css"
-  }
+  },
+  "packageManager": "pnpm@10.34.8+sha512.f627a8e971343afe49dfd0f63d028234201dfa831d5cb588733e1e5f8db26bf16989a32161ab5c1b4db3b1fdbc373160606b5b89e002df6dd19a85adf91fc5a8"
 }
