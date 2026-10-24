@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="bg-orange-50" lang="fr">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,13 +12,13 @@
       content="gîte Nistos, location vacances Hautes-Pyrénées, gîte 4 étoiles, hébergement montagne, location 8 personnes, ski Pyrénées, randonnée Nistos, vacances Comminges"
     />
     <meta name="author" content="Maison Lacournère" />
-    <meta name="theme-color" content="#FFF7ED" />
+    <meta name="theme-color" content="#F7F4EE" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://lacournere.com/" />
+    <link rel="canonical" href="https://gite.lacournere.fr/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lacournere.com/" />
+    <meta property="og:url" content="https://gite.lacournere.fr/" />
     <meta
       property="og:title"
       content="Maison Lacournère | Gîte 4 étoiles à Nistos — Hautes-Pyrénées"
@@ -29,13 +29,13 @@
     />
     <meta
       property="og:image"
-      content="https://lacournere.com/static/images/landing.jpg"
+      content="https://gite.lacournere.fr/static/images/hero.jpg"
     />
     <meta property="og:locale" content="fr_FR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://lacournere.com/" />
+    <meta name="twitter:url" content="https://gite.lacournere.fr/" />
     <meta
       name="twitter:title"
       content="Maison Lacournère | Gîte 4 étoiles à Nistos — Hautes-Pyrénées"
@@ -46,7 +46,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://lacournere.com/static/images/landing.jpg"
+      content="https://gite.lacournere.fr/static/images/hero.jpg"
     />
 
     <!-- Geo Tags -->
@@ -55,677 +55,1156 @@
     <meta name="geo.position" content="43.018056;0.455556" />
     <meta name="ICBM" content="43.018056, 0.455556" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link rel="preload" as="image" href="static/images/hero.jpg" />
     <link rel="stylesheet" href="static/dist/styles.css" />
+
+    <script>
+      document.documentElement.classList.add("js")
+    </script>
 
     <title>Maison Lacournère | Gîte 4 étoiles à Nistos — Hautes-Pyrénées</title>
   </head>
 
-  <!-- Reference: https://github.com/aFarkas/lazysizes -->
-  <script src="lazysizes.min.js" async></script>
-
   <body>
-    <header>
+    <header
+      class="site-header fixed inset-x-0 top-0 z-20 border-b border-transparent text-white"
+    >
       <nav
-        class="bg-orange-50 fixed py-4 top-0 w-full z-20"
+        class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6"
         aria-label="Navigation principale"
       >
-        <ul class="flex flex-row flex-wrap justify-center gap-4 sm:gap-8">
-          <li class="nav-item hidden sm:block">
-            <a href="#">Accueil</a>
-          </li>
+        <a href="#" class="font-serif text-xl font-medium">Maison Lacournère</a>
 
-          <li class="nav-item">
-            <a href="#le-gîte">Le gîte</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#activités">Activités</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#tarifs">Tarifs</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#contact">Contact</a>
-          </li>
+        <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+          <li><a class="hover:opacity-70" href="#la-maison">La maison</a></li>
+          <li><a class="hover:opacity-70" href="#saisons">Saisons</a></li>
+          <li><a class="hover:opacity-70" href="#alentours">Alentours</a></li>
+          <li><a class="hover:opacity-70" href="#tarifs">Tarifs</a></li>
+          <li><a class="hover:opacity-70" href="#questions">Questions</a></li>
         </ul>
+
+        <a class="button-light py-2" href="#contact">Contact</a>
       </nav>
     </header>
 
-    <main class="flex flex-col gap-20 max-w-4xl mx-auto px-4">
-      <img
-        class="absolute lazyload left-0 right-0 h-screen w-full"
-        src="static/images/landing.jpg"
-        alt="Vue de Nistos dans les Hautes-Pyrénées"
-      />
-
+    <main>
       <section
         aria-label="Présentation"
-        class="flex flex-col gap-4 h-screen items-center justify-center max-w-xl self-center text-white z-10"
+        class="relative flex h-svh min-h-[36rem] flex-col justify-center overflow-hidden"
       >
-        <h1 class="font-medium font-serif text-4xl sm:text-6xl">
-          Maison Lacournère
-        </h1>
+        <img
+          class="hero-image absolute inset-0 size-full object-cover object-[60%_center]"
+          src="static/images/hero.jpg"
+          alt="Les montagnes vues depuis la cour de la maison"
+          width="1913"
+          height="1080"
+          fetchpriority="high"
+        />
+        <!-- Shade behind the text only, so the sunny photo stays bright. -->
+        <div
+          class="absolute inset-0 bg-linear-to-b from-black/45 via-black/30 to-black/10 sm:bg-linear-to-r sm:from-black/50 sm:via-black/15 sm:to-transparent"
+        ></div>
 
-        <p class="text-center text-md">
-          Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées, à
-          partir de
-          <a class="decoration-2 font-semibold underline" href="#tarifs"
-            >100 €/nuit</a
+        <div
+          class="hero-content relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-4 pb-32 text-white sm:px-6"
+        >
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase">
+            Nistos · Hautes-Pyrénées · Gîtes&nbsp;de&nbsp;France
+          </p>
+
+          <h1
+            class="font-serif text-5xl leading-[1.05] font-medium tracking-tight sm:text-7xl"
           >
-        </p>
+            Maison Lacournère
+          </h1>
+
+          <p class="max-w-xl text-lg text-white/85">
+            Un gîte pour 8&nbsp;personnes dans un petit village de montagne, au
+            calme et au soleil. À quelques kilomètres des pistes de Nistos.
+          </p>
+
+          <div class="grid w-full gap-3 sm:flex sm:w-auto">
+            <a class="button-light" href="#contact">Nous contacter</a>
+            <a
+              class="button border border-white/40 bg-black/20 text-white backdrop-blur-sm hover:bg-black/30"
+              href="#la-maison"
+              >Voir la maison</a
+            >
+          </div>
+        </div>
       </section>
 
-      <section
-        class="flex flex-col gap-4"
-        id="le-gîte"
-        aria-labelledby="heading-gite"
-      >
-        <h2 id="heading-gite">Le gîte</h2>
-
-        <p class="text-xs uppercase">8 personnes • 4 chambres</p>
-
-        <div class="columns-2 gap-x-2 sm:columns-3">
-          <!-- Overlay -->
-          <div
-            class="duration-150 fixed flex flex-col gap-4 h-full invisible items-center justify-center left-0 opacity-0 top-0 transition-all w-full z-30"
-            id="overlay"
-            onclick="hideOverlay()"
-            style="background-color: rgba(0, 0, 0, 0.75)"
+      <!-- Key facts. -->
+      <div class="relative z-10 mx-auto -mt-16 max-w-6xl px-4 sm:px-6">
+        <div class="key-facts glow">
+          <dl
+            class="glow-border grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-line shadow-xl shadow-black/5 sm:grid-cols-4"
           >
-            <img
-              alt="Image en plein écran"
-              class="h-auto w-auto"
-              style="max-width: 90%; max-height: 90%"
-            />
-            <p class="decoration-2 text-sm text-white underline"></p>
-          </div>
-
-          <!-- Images -->
-          <img
-            alt="Vue panoramique depuis la station nordique de Nistos-Seich"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/nistos.jpg"
-            onclick='showOverlay(
-              "static/images/nistos.jpg",
-              "Vue panoramique depuis la station nordique de Nistos-Seich"
-              )'
-          />
-          <img
-            alt="Vue panoramique depuis la station nordique de Nistos-Seich"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/nistos-2.jpg"
-            onclick='showOverlay(
-              "static/images/nistos-2.jpg",
-              "Vue panoramique depuis la station nordique de Nistos-Seich"
-            )'
-          />
-          <img
-            alt="Vue panoramique depuis la station nordique de Nistos-Seich"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/nistos-3.jpg"
-            onclick='showOverlay(
-              "static/images/nistos-3.jpg",
-              "Vue panoramique depuis la station nordique de Nistos-Seich"
-            )'
-          />
-          <img
-            alt="Façade extérieure"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-outside.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-outside.jpg",
-              "Façade extérieure"
-            )'
-          />
-          <img
-            alt="Terrasse extérieure"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-outside-2.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-outside-2.jpg",
-              "Terrasse extérieure"
-            )'
-          />
-          <img
-            alt="Salle à manger"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-living-room.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-living-room.jpg",
-              "Salle à manger"
-            )'
-          />
-          <img
-            alt="Salon"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-living-room-2.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-living-room-2.jpg",
-              "Salon"
-            )'
-          />
-          <img
-            alt="Première chambre"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-bedroom.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-bedroom.jpg",
-              "Première chambre"
-            )'
-          />
-          <img
-            alt="Deuxième chambre"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-bedroom-2.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-bedroom-2.jpg",
-              "Deuxième chambre"
-            )'
-          />
-          <img
-            alt="Troisième chambre"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-bedroom-3.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-bedroom-3.jpg",
-              "Troisième chambre"
-            )'
-          />
-          <img
-            alt="Quatrième chambre"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-bedroom-4.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-bedroom-4.jpg",
-              "Quatrième chambre"
-            )'
-          />
-          <img
-            alt="Salle de bain"
-            class="duration-300 hover:brightness-75 lazyload mb-2 rounded-md w-full"
-            data-src="static/images/lacournere-bathroom.jpg"
-            onclick='showOverlay(
-              "static/images/lacournere-bathroom.jpg",
-              "Salle de bain"
-            )'
-          />
+            <div class="flex flex-col gap-1 bg-white p-5">
+              <dt class="text-xs text-muted">Capacité</dt>
+              <dd class="font-serif text-xl sm:text-2xl">8&nbsp;personnes</dd>
+            </div>
+            <div class="flex flex-col gap-1 bg-white p-5">
+              <dt class="text-xs text-muted">Couchage</dt>
+              <dd class="font-serif text-xl sm:text-2xl">4&nbsp;chambres</dd>
+            </div>
+            <div class="flex flex-col gap-1 bg-white p-5">
+              <dt class="text-xs text-muted">Classement</dt>
+              <dd
+                class="flex h-7 items-center gap-1 text-terracotta sm:h-8"
+                role="img"
+                aria-label="4 étoiles"
+              >
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"
+                  /></svg
+                ><svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"
+                  /></svg
+                ><svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"
+                  /></svg
+                ><svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"
+                  />
+                </svg>
+              </dd>
+            </div>
+            <div class="flex flex-col gap-1 bg-white p-5">
+              <dt class="text-xs text-muted">À partir de</dt>
+              <dd class="font-serif text-xl sm:text-2xl">100&nbsp;€ la nuit</dd>
+            </div>
+          </dl>
         </div>
+      </div>
 
-        <p class="text-justify">
-          Dans son écrin vert, la maison Lacournère vous invite au calme et à la
-          détente. En famille ou entre amis, nous vous accueillons à Nistos dans
-          les Hautes-Pyrénées. Petit village de montagne qui abrite une flore et
-          une faune riches et préservées. De la mi-septembre à la mi-octobre,
-          vous pourrez entendre le brame du cerf. Lieu magique pour les amateurs
-          de pêche, de randonnées, de ski de fond, de piste ou de raquettes,
-          d'escalade, de VTT, de vélo sur des routes qui vous mènent vers les
-          grands cols des Pyrénées. Cette maison est très bien ensoleillée, avec
-          vue sur la montagne. L'extérieur sera un espace de jeu naturel que ce
-          soit pour les grands ou pour les petits. Vous pourrez aussi apprécier
-          une bonne raclette au coin du feu et une bonne grillade en été (ou le
-          contraire). La maison est située au croisement de nombreuses activités
-          et de nombreux lieux à visiter : Saint Bertrand de Comminges, les
-          grands cols Pyrénéens, les lacs de montagne, Lourdes, l'Espagne, le
-          golf de Lannemezan, etc.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <div class="flex flex-1 flex-col gap-4">
-            <h3 class="font-semibold">Équipements</h3>
-
-            <p>
-              La maison Lacournère est entièrement équipée afin de simplifier
-              votre séjour.
+      <div class="mx-auto flex max-w-6xl flex-col gap-28 px-4 py-24 sm:px-6">
+        <section
+          class="flex flex-col gap-10"
+          id="la-maison"
+          aria-labelledby="heading-maison"
+        >
+          <div class="grid gap-6 md:grid-cols-2 md:items-end">
+            <div data-cascade class="flex flex-col gap-3">
+              <p class="eyebrow">Le gîte</p>
+              <h2 id="heading-maison">La maison</h2>
+            </div>
+            <p data-reveal class="text-muted">
+              Dans son écrin vert, la maison Lacournère vous invite au calme et
+              à la détente. En famille ou entre amis, nous vous accueillons à
+              Nistos, petit village de montagne à la faune et à la flore riches
+              et préservées. La maison est très bien ensoleillée, avec vue sur
+              la montagne, et l'extérieur est un espace de jeu naturel pour les
+              grands comme pour les petits. Vous pourrez y apprécier une bonne
+              raclette au coin du feu et une bonne grillade en été (ou
+              le&nbsp;contraire).
             </p>
-
-            <ul class="border border-stone-400 flex flex-col rounded-md">
-              <li class="border-b border-stone-400">
-                <button
-                  class="accordion-header"
-                  onclick='toggleAccordion("accordion-panel-1")'
-                >
-                  <span>Rez-de-chaussée</span>
-                  <img
-                    alt="Voir le rez-de-chaussée"
-                    class="h-4 lazyload"
-                    data-src="static/icons/chevron-down.svg"
-                  />
-                </button>
-
-                <div class="accordion-panel" id="accordion-panel-1">
-                  <p>
-                    Cuisine équipée, lave vaisselle, four électrique,
-                    micro-ondes, réfrigérateur-congélateur, cafetières (filtre
-                    et senseo), grille-pain, appareil à raclettes et grill,
-                    appareil à fondue. Vaisselle et ustensiles.
-                    <br /><br />
-                    Salon équipé d’une télévision et du wifi. Cheminée avec
-                    insert vous apportera chaleur et réconfort. Chauffage
-                    électrique dans toutes les pièces (voir
-                    <a class="underline" href="#tarifs">les tarifs</a> pour le
-                    bois de chauffage). <br /><br />WC, douche et cellier.
-                  </p>
-                </div>
-              </li>
-
-              <li class="border-b border-stone-400">
-                <button
-                  class="accordion-header"
-                  onclick='toggleAccordion("accordion-panel-2")'
-                >
-                  <span>Premier étage</span>
-                  <img
-                    alt="Voir le premier étage"
-                    class="h-4 lazyload"
-                    data-src="static/icons/chevron-down.svg"
-                  />
-                </button>
-
-                <div class="accordion-panel" id="accordion-panel-2">
-                  <p>4 grandes chambres : <br /><br /></p>
-                  <ul class="list-disc list-inside">
-                    <li>
-                      Lit en 140 et une couette en
-                      <span class="diagonal-fractions">220/240</span>,
-                    </li>
-                    <li>
-                      Lit en 180 et une couette en
-                      <span class="diagonal-fractions">220/240</span>,
-                    </li>
-                    <li>
-                      Lit en 140 et une couette en
-                      <span class="diagonal-fractions">220/240</span>,
-                    </li>
-                    <li>
-                      2 lits en 90 et une couette en
-                      <span class="diagonal-fractions">140/200</span>
-                    </li>
-                  </ul>
-                  <p>
-                    <br />Couvertures supplémentaires, cintres, salle de bains,
-                    WC indépendant, petite bibliothèque avec livres et jeux de
-                    société.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <button
-                  class="accordion-header"
-                  onclick='toggleAccordion("accordion-panel-3")'
-                >
-                  <span>Équipements divers</span>
-                  <img
-                    alt="Voir les équipements divers"
-                    class="h-4 lazyload"
-                    data-src="static/icons/chevron-down.svg"
-                  />
-                </button>
-
-                <div class="accordion-panel" id="accordion-panel-3">
-                  <ul class="list-disc list-inside">
-                    <li>Lave linge</li>
-                    <li>Étendoir à linge, table et fer à repasser</li>
-                    <li>Matériel de puériculture</li>
-                    <li>Barbecue</li>
-                    <li>Salon de jardin</li>
-                    <li>Parking</li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
           </div>
 
-          <div class="flex flex-1 flex-col gap-4">
-            <h3 class="font-semibold">Accès</h3>
+          <!-- Gallery: five large photos and a grid of thumbnails, all browsable in the lightbox. -->
+          <div class="flex flex-col gap-2">
+            <div class="glow glow-soft">
+              <div
+                class="grid grid-cols-2 gap-2 sm:h-[30rem] sm:grid-cols-4 sm:grid-rows-2"
+                data-cascade
+              >
+                <button
+                  class="gallery-item col-span-2 aspect-[3/2] sm:row-span-2 sm:aspect-auto"
+                  data-gallery
+                  type="button"
+                >
+                  <img
+                    src="static/images/house/outside.jpg"
+                    alt="La maison"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  class="gallery-item aspect-square sm:aspect-auto"
+                  data-gallery
+                  type="button"
+                >
+                  <img
+                    src="static/images/house/living-room-view.jpg"
+                    alt="Le salon, ouvert sur la montagne"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  class="gallery-item aspect-square sm:aspect-auto"
+                  data-gallery
+                  type="button"
+                >
+                  <img
+                    src="static/images/house/living-room.jpg"
+                    alt="La pièce de vie"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  class="gallery-item aspect-square sm:aspect-auto"
+                  data-gallery
+                  type="button"
+                >
+                  <img
+                    src="static/images/house/bedroom-1.jpg"
+                    alt="Une chambre"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  class="gallery-item aspect-square sm:aspect-auto"
+                  data-gallery
+                  type="button"
+                >
+                  <img
+                    src="static/images/house/courtyard-view.jpg"
+                    alt="La vue depuis la cour"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
 
-            <p>
-              La maison Lacournère se situe au
+            <div
+              class="grid grid-cols-5 gap-2 sm:grid-cols-10"
+              data-cascade="30"
+            >
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/dining-table.jpg"
+                  data-full="static/images/house/dining-table.jpg"
+                  alt="La grande table"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/kitchen.jpg"
+                  data-full="static/images/house/kitchen.jpg"
+                  alt="La cuisine"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/fireplace.jpg"
+                  data-full="static/images/house/fireplace.jpg"
+                  alt="Le coin cheminée"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/bedroom-3.jpg"
+                  data-full="static/images/house/bedroom-3.jpg"
+                  alt="Une chambre"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/bedroom-4.jpg"
+                  data-full="static/images/house/bedroom-4.jpg"
+                  alt="Une chambre"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/bedroom-twin.jpg"
+                  data-full="static/images/house/bedroom-twin.jpg"
+                  alt="La chambre aux deux lits simples"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/bathroom.jpg"
+                  data-full="static/images/house/bathroom.jpg"
+                  alt="La salle de bains à l'étage"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/shower.jpg"
+                  data-full="static/images/house/shower.jpg"
+                  alt="La douche du rez-de-chaussée"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/courtyard.jpg"
+                  data-full="static/images/house/courtyard.jpg"
+                  alt="La cour"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="gallery-item aspect-square rounded-lg"
+                data-gallery
+                type="button"
+              >
+                <img
+                  src="static/images/house/thumbnails/barn-view.jpg"
+                  data-full="static/images/house/barn-view.jpg"
+                  alt="La vue depuis la grange"
+                  loading="lazy"
+                />
+              </button>
+            </div>
+          </div>
+
+          <!-- Rooms and equipment. -->
+          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div data-reveal class="card flex flex-col gap-4">
+              <h3>Au rez-de-chaussée</h3>
+              <ul class="checklist">
+                <li>
+                  Cuisine équipée&nbsp;: lave-vaisselle, four, micro-ondes,
+                  réfrigérateur-congélateur, bouilloire
+                </li>
+                <li>Cafetières filtre et Senseo, grille-pain</li>
+                <li>Appareils à raclette, grill et fondue</li>
+                <li>Salon avec télévision, lecteur DVD et wifi</li>
+                <li>Cheminée avec insert</li>
+                <li>Douche, WC et cellier</li>
+              </ul>
+            </div>
+
+            <div data-reveal class="card flex flex-col gap-4">
+              <h3>À l'étage</h3>
+              <ul class="flex flex-col divide-y divide-line text-sm">
+                <li class="flex justify-between py-2 first:pt-0">
+                  <span>Chambre 1</span>
+                  <span class="text-muted">1 lit de 140</span>
+                </li>
+                <li class="flex justify-between py-2">
+                  <span>Chambre 2</span>
+                  <span class="text-muted">1 lit de 180</span>
+                </li>
+                <li class="flex justify-between py-2">
+                  <span>Chambre 3</span>
+                  <span class="text-muted">1 lit de 140</span>
+                </li>
+                <li class="flex justify-between py-2">
+                  <span>Chambre 4</span>
+                  <span class="text-muted">2 lits de 90</span>
+                </li>
+              </ul>
+              <p class="text-sm text-muted">
+                Une salle de bains, un WC séparé, des couvertures en plus et un
+                coin bibliothèque avec livres et jeux de société.
+              </p>
+            </div>
+
+            <div
+              data-reveal
+              class="card flex flex-col gap-4 md:col-span-2 lg:col-span-1"
+            >
+              <h3>Et aussi</h3>
+              <ul class="checklist">
+                <li>Lits faits à l'arrivée, linge de toilette fourni</li>
+                <li>Lave-linge, étendoir, table et fer à repasser</li>
+                <li>Lit bébé et chaise haute</li>
+                <li>Sèche-cheveux et aspirateur</li>
+                <li>Barbecue et salon de jardin</li>
+                <li>Chauffage électrique dans toutes les pièces</li>
+                <li>Parking</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="flex flex-col gap-10"
+          id="saisons"
+          aria-labelledby="heading-saisons"
+        >
+          <div data-cascade class="flex flex-col gap-3">
+            <p class="eyebrow">Au fil de l'année</p>
+            <h2 id="heading-saisons">Que faire selon la saison</h2>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <article data-reveal class="card flex flex-col gap-3">
+              <h3>En hiver</h3>
+              <p class="text-sm text-muted">
+                L'espace nordique de Nistos, entre 1&nbsp;600 et
+                1&nbsp;800&nbsp;mètres, est à quelques kilomètres&nbsp;: une
+                quarantaine de kilomètres de pistes de ski de fond, des
+                itinéraires en raquettes et deux pistes de luge, avec location
+                du matériel sur place. Pour le ski alpin, comptez 40&nbsp;km
+                jusqu'à Saint-Lary, Peyragudes, Piau ou Val-Louron.
+              </p>
+            </article>
+
+            <article data-reveal class="card flex flex-col gap-3">
+              <h3>Au printemps et en été</h3>
+              <p class="text-sm text-muted">
+                Des balades pour tous&nbsp;: la table d'orientation du Tourroc,
+                les cabanes de Jézeau ou le pic de Mountarrouy pour la vue. Les
+                cyclistes ont les cols de Balès, d'Aspin, de Peyresourde et le
+                Tourmalet à portée de roue. Le Nistos et la Neste sont connus
+                pour leurs truites.
+              </p>
+            </article>
+
+            <article data-reveal class="card flex flex-col gap-3">
+              <h3>En automne</h3>
+              <p class="text-sm text-muted">
+                De mi-septembre à mi-octobre, c'est la saison du brame du cerf.
+                On l'entend surtout le soir, et avec un peu de chance on
+                aperçoit les cerfs à la tombée de la nuit.
+              </p>
+            </article>
+
+            <article data-reveal class="card flex flex-col gap-3">
+              <h3>Avec des enfants</h3>
+              <p class="text-sm text-muted">
+                Lit bébé, chaise haute, jeux de société et un grand terrain pour
+                courir. Quand il pleut, il y a le parc de la Demi-Lune à
+                Lannemezan et plusieurs piscines et espaces aquatiques dans la
+                vallée.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="flex flex-col gap-10"
+          id="alentours"
+          aria-labelledby="heading-alentours"
+        >
+          <div class="grid gap-6 md:grid-cols-2 md:items-end">
+            <div data-cascade class="flex flex-col gap-3">
+              <p class="eyebrow">Les alentours</p>
+              <h2 id="heading-alentours">Autour de Nistos</h2>
+            </div>
+            <p data-reveal class="text-muted">
+              Nistos est un petit village d'environ 200 habitants, à
+              640&nbsp;mètres d'altitude. Voici nos adresses et sorties
+              préférées, avec la distance depuis la maison.
+            </p>
+          </div>
+
+          <div class="grid items-start gap-4 lg:grid-cols-5">
+            <div data-reveal class="card flex flex-col lg:col-span-3">
+              <h3 class="pb-2">À voir, à faire</h3>
+
               <a
-                class="external-link"
-                href="https://goo.gl/maps/o3EzvP17C7uAA8zw6"
+                class="place-row group"
+                href="https://nistos-ski.fr"
                 rel="noopener"
                 target="_blank"
-                >26, route du Sausset, 65150 Nistos</a
-              >.
+              >
+                <span>
+                  <span class="group-hover:underline"
+                    >Espace nordique de Nistos</span
+                  >
+                  <span class="block text-sm text-muted"
+                    >Ski de fond, raquettes, luge</span
+                  >
+                </span>
+                <span class="distance">Tout près</span>
+              </a>
+
+              <a
+                class="place-row group"
+                href="https://www.visorando.com/randonnee-nistos.html"
+                rel="noopener"
+                target="_blank"
+              >
+                <span>
+                  <span class="group-hover:underline"
+                    >Randonnées à pied et à VTT</span
+                  >
+                  <span class="block text-sm text-muted"
+                    >Au départ de Nistos et de Seich</span
+                  >
+                </span>
+                <span class="distance">Tout près</span>
+              </a>
+
+              <a
+                class="place-row group"
+                href="https://www.parc-lannemezan.com/"
+                rel="noopener"
+                target="_blank"
+              >
+                <span>
+                  <span class="group-hover:underline"
+                    >Parc de loisirs de la Demi-Lune</span
+                  >
+                  <span class="block text-sm text-muted">Lannemezan</span>
+                </span>
+                <span class="distance">25&nbsp;km</span>
+              </a>
+
+              <div class="place-row">
+                <span>
+                  <span>Grottes, château et vieilles pierres</span>
+                  <span class="block text-sm text-muted">
+                    <a
+                      class="hover:underline"
+                      href="https://grottesdegargas.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      >Grottes de Gargas</a
+                    >,
+                    <a
+                      class="hover:underline"
+                      href="https://www.chateaudemauvezin.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      >château de Mauvezin</a
+                    >,
+                    <a
+                      class="hover:underline"
+                      href="https://gouffre-esparros.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      >gouffre d'Esparros</a
+                    >,
+                    <a
+                      class="hover:underline"
+                      href="https://www.st-bertrand.com/"
+                      rel="noopener"
+                      target="_blank"
+                      >Saint-Bertrand-de-Comminges</a
+                    >
+                  </span>
+                </span>
+                <span class="distance">25&nbsp;km</span>
+              </div>
+
+              <a
+                class="place-row group"
+                href="https://www.n-py.com/"
+                rel="noopener"
+                target="_blank"
+              >
+                <span>
+                  <span class="group-hover:underline">Ski alpin</span>
+                  <span class="block text-sm text-muted"
+                    >Saint-Lary, Piau, Peyragudes, Val-Louron</span
+                  >
+                </span>
+                <span class="distance">40&nbsp;km</span>
+              </a>
+
+              <div class="place-row">
+                <span>
+                  <span>Piscines et bains chauds</span>
+                  <span class="block text-sm text-muted">
+                    <a
+                      class="hover:underline"
+                      href="https://ocybelles.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      >Les Ocybelles</a
+                    >,
+                    <a
+                      class="hover:underline"
+                      href="https://www.balnea.fr"
+                      rel="noopener"
+                      target="_blank"
+                      >Balnéa</a
+                    >,
+                    <a
+                      class="hover:underline"
+                      href="https://www.aquensis.fr"
+                      rel="noopener"
+                      target="_blank"
+                      >Aquensis</a
+                    >
+                  </span>
+                </span>
+                <span class="distance">Journée</span>
+              </div>
+
+              <div class="place-row">
+                <span>
+                  <span>Les grands sites des Pyrénées</span>
+                  <span class="block text-sm text-muted">
+                    <a
+                      class="hover:underline"
+                      href="https://picdumidi.com"
+                      rel="noopener"
+                      target="_blank"
+                      >Pic du Midi</a
+                    >,
+                    <a
+                      class="hover:underline"
+                      href="https://www.tourisme-occitanie.com/fr/fiche/itineraire/le-cirque-de-gavarnie-gavarnie_TFOITIMIP0650000084/"
+                      rel="noopener"
+                      target="_blank"
+                      >cirque de Gavarnie</a
+                    >,
+                    <a
+                      class="hover:underline"
+                      href="https://www.tourisme-occitanie.com/fr/fiche/patrimoine-naturel/lacs-de-neouvielle-aragnouet_TFOPNAMIP0650000124/"
+                      rel="noopener"
+                      target="_blank"
+                      >lacs du Néouvielle</a
+                    >,
+                    <a
+                      class="hover:underline"
+                      href="https://www.lourdes.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      >Lourdes</a
+                    >
+                  </span>
+                </span>
+                <span class="distance">Journée</span>
+              </div>
+            </div>
+
+            <div data-reveal class="card flex flex-col lg:col-span-2">
+              <h3 class="pb-2">Offices de tourisme</h3>
+
+              <a
+                class="place-row group"
+                href="https://tourisme-neste-barousse.fr/"
+                rel="noopener"
+                target="_blank"
+              >
+                <span class="group-hover:underline">Neste-Barousse</span>
+                <span class="distance">10&nbsp;km</span>
+              </a>
+
+              <a
+                class="place-row group"
+                href="https://coeurdespyrenees.com/"
+                rel="noopener"
+                target="_blank"
+              >
+                <span class="group-hover:underline">Cœur des Pyrénées</span>
+                <span class="distance">25&nbsp;km</span>
+              </a>
+
+              <a
+                class="place-row group"
+                href="https://www.ville-bagneresdebigorre.fr/office-de-tourisme"
+                rel="noopener"
+                target="_blank"
+              >
+                <span class="group-hover:underline">Bagnères-de-Bigorre</span>
+                <span class="distance">45&nbsp;km</span>
+              </a>
+
+              <a
+                class="place-row group"
+                href="https://www.saintlary.com/"
+                rel="noopener"
+                target="_blank"
+              >
+                <span class="group-hover:underline">Saint-Lary-Soulan</span>
+                <span class="distance">45&nbsp;km</span>
+              </a>
+
+              <a
+                class="place-row group"
+                href="https://www.pyrenees2vallees.com/vallee-du-louron"
+                rel="noopener"
+                target="_blank"
+              >
+                <span class="group-hover:underline">Vallée du Louron</span>
+                <span class="distance">50&nbsp;km</span>
+              </a>
+
+              <a
+                class="place-row group"
+                href="https://www.pyrenees31.com"
+                rel="noopener"
+                target="_blank"
+              >
+                <span class="group-hover:underline">Bagnères-de-Luchon</span>
+                <span class="distance">50&nbsp;km</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="grid items-start gap-10 md:grid-cols-2"
+          id="tarifs"
+          aria-labelledby="heading-tarifs"
+        >
+          <div data-cascade class="flex flex-col gap-4">
+            <p class="eyebrow">Tarifs</p>
+            <h2 id="heading-tarifs">Combien ça coûte</h2>
+            <p class="text-muted">
+              On loue la maison à la semaine ou le temps d'un week-end, et le
+              prix dépend de la saison.
+              <a class="link text-ink" href="#contact">Écrivez-nous</a> avec vos
+              dates et le nombre de personnes, on vous répond dès que possible.
             </p>
+            <div class="flex flex-col gap-2 pt-2">
+              <p class="text-sm text-muted">
+                Vous pouvez aussi réserver en ligne ou retrouver la maison sur :
+              </p>
+              <a
+                class="card group flex items-center justify-between gap-4 px-4 py-3 hover:border-ink"
+                href="https://maps.google.com/?cid=7798498475744576098"
+                rel="noopener"
+                target="_blank"
+              >
+                <span
+                  class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white"
+                  aria-hidden="true"
+                >
+                  <img
+                    class="size-5"
+                    src="static/icons/google-maps.png"
+                    alt=""
+                  />
+                </span>
+                <span class="flex-1">
+                  <span class="block font-medium">Google Maps</span>
+                  <span class="block text-sm text-muted"
+                    >Avis des voyageurs et itinéraire</span
+                  >
+                </span>
+                <svg
+                  class="size-4 shrink-0 text-muted transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg>
+              </a>
+              <a
+                class="card group flex items-center justify-between gap-4 px-4 py-3 hover:border-ink"
+                href="https://www.gites-de-france-65.com/location-Gite-Nistos-Hautes-pyrenees-65G314411.html"
+                rel="noopener"
+                target="_blank"
+              >
+                <span
+                  class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white"
+                  aria-hidden="true"
+                >
+                  <img
+                    class="size-5"
+                    src="static/icons/gites-de-france.png"
+                    alt=""
+                  />
+                </span>
+                <span class="flex-1">
+                  <span class="block font-medium">Gîtes de France</span>
+                  <span class="block text-sm text-muted"
+                    >Disponibilités, prix et avis des voyageurs</span
+                  >
+                </span>
+                <svg
+                  class="size-4 shrink-0 text-muted transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg>
+              </a>
+              <a
+                class="card group flex items-center justify-between gap-4 px-4 py-3 hover:border-ink"
+                href="https://www.airbnb.fr/rooms/42327860"
+                rel="noopener"
+                target="_blank"
+              >
+                <span
+                  class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white"
+                  aria-hidden="true"
+                >
+                  <img class="size-5" src="static/icons/airbnb.png" alt="" />
+                </span>
+                <span class="flex-1">
+                  <span class="block font-medium">Airbnb</span>
+                  <span class="block text-sm text-muted"
+                    >Réservation en ligne et avis des voyageurs</span
+                  >
+                </span>
+                <svg
+                  class="size-4 shrink-0 text-muted transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg>
+              </a>
+              <a
+                class="card group flex items-center justify-between gap-4 px-4 py-3 hover:border-ink"
+                href="https://www.tourisme-occitanie.com/fr/fiche/hebergement-locatif/maison-lacournere-nistos_TFOHLOMIP065V52APJU/"
+                rel="noopener"
+                target="_blank"
+              >
+                <span
+                  class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white"
+                  aria-hidden="true"
+                >
+                  <img
+                    class="size-5"
+                    src="static/icons/tourisme-occitanie.png"
+                    alt=""
+                  />
+                </span>
+                <span class="flex-1">
+                  <span class="block font-medium">Tourisme Occitanie</span>
+                  <span class="block text-sm text-muted"
+                    >La fiche du comité régional du tourisme</span
+                  >
+                </span>
+                <svg
+                  class="size-4 shrink-0 text-muted transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="glow">
+            <div data-reveal class="card glow-border flex flex-col gap-6 p-8">
+              <div class="flex flex-col gap-1">
+                <span class="text-sm text-muted">À partir de</span>
+                <span class="font-serif text-5xl"
+                  >100&nbsp;€
+                  <span class="font-sans text-base text-muted"
+                    >la nuit</span
+                  ></span
+                >
+              </div>
+
+              <ul class="checklist">
+                <li>Deux nuits minimum</li>
+                <li>Lits faits à votre arrivée, linge de toilette fourni</li>
+                <li>Wifi inclus</li>
+                <li>Caution de 500&nbsp;€</li>
+                <li>
+                  Bois pour la cheminée&nbsp;: 70&nbsp;€ le stère, selon ce que
+                  vous utilisez
+                </li>
+              </ul>
+
+              <a class="button-primary" href="#contact"
+                >Demander les disponibilités</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="grid gap-10 md:grid-cols-3"
+          id="questions"
+          aria-labelledby="heading-questions"
+        >
+          <div data-cascade class="flex flex-col gap-3">
+            <p class="eyebrow">Bon à savoir</p>
+            <h2 id="heading-questions">Questions fréquentes</h2>
+          </div>
+
+          <div data-reveal class="flex flex-col md:col-span-2">
+            <details class="faq" name="faq">
+              <summary>Le linge de maison est-il fourni&nbsp;?</summary>
+              <p>
+                Oui. Les lits sont faits quand vous arrivez et les serviettes de
+                toilette sont fournies. Vous n'avez rien à apporter.
+              </p>
+            </details>
+            <details class="faq" name="faq">
+              <summary>
+                Combien de nuits faut-il réserver au minimum&nbsp;?
+              </summary>
+              <p>
+                Deux nuits. On loue aussi à la semaine&nbsp;: demandez-nous les
+                prix pour vos dates.
+              </p>
+            </details>
+            <details class="faq" name="faq">
+              <summary>Peut-on venir avec un bébé&nbsp;?</summary>
+              <p>
+                Bien sûr. Il y a un lit bébé et une chaise haute dans la maison.
+              </p>
+            </details>
+            <details class="faq" name="faq">
+              <summary>Comment se chauffe la maison&nbsp;?</summary>
+              <p>
+                Il y a des radiateurs électriques dans toutes les pièces et une
+                cheminée avec insert dans le salon. Le bois est compté 70&nbsp;€
+                le stère, seulement pour ce que vous brûlez.
+              </p>
+            </details>
+            <details class="faq" name="faq">
+              <summary>Comment peut-on payer&nbsp;?</summary>
+              <p>
+                Par chèque, en espèces ou par virement. Une caution de
+                500&nbsp;€ est demandée à l'arrivée et rendue après le séjour.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <section
+          class="flex flex-col gap-10"
+          id="contact"
+          aria-labelledby="heading-contact"
+        >
+          <div data-cascade class="flex flex-col gap-3">
+            <p class="eyebrow">Contact</p>
+            <h2 id="heading-contact">Nous joindre</h2>
+            <p class="max-w-xl text-muted">
+              Pour réserver ou poser une question, le plus simple est de nous
+              appeler ou de nous envoyer un mail.
+            </p>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-3">
+            <div class="flex flex-col gap-4">
+              <a
+                data-reveal
+                class="card flex flex-col gap-1 hover:border-ink"
+                href="tel:+33671973479"
+              >
+                <span class="text-xs text-muted">Téléphone</span>
+                <span class="font-medium">+33 6 71 97 34 79</span>
+              </a>
+              <a
+                data-reveal
+                class="card flex flex-col gap-1 hover:border-ink"
+                href="mailto:anne-marie.fontan@wanadoo.fr"
+              >
+                <span class="text-xs text-muted">E-mail</span>
+                <span class="font-medium"
+                  >anne-marie.fontan<wbr />@wanadoo.fr</span
+                >
+              </a>
+              <a
+                data-reveal
+                class="card flex flex-col gap-1 hover:border-ink"
+                href="https://maps.google.com/?cid=7798498475744576098"
+                rel="noopener"
+                target="_blank"
+              >
+                <span class="text-xs text-muted">Adresse</span>
+                <span class="font-medium"
+                  >26, route du Sausset<br />65150 Nistos</span
+                >
+              </a>
+            </div>
 
             <iframe
-              class="border border-stone-400 rounded-md"
-              height="200"
+              data-reveal
+              class="min-h-80 w-full rounded-2xl border border-line md:col-span-2 md:h-full"
               loading="lazy"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.110770045928!2d0.45339461567200656!3d43.018055579148246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc33353bc16473137!2zNDPCsDAxJzA1LjAiTiAwwrAyNycyMC4xIkU!5e0!3m2!1sen!2sfr!4v1637588573165!5m2!1sen!2sfr"
               title="Localisation de la Maison Lacournère"
             ></iframe>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+    </main>
 
-      <section
-        class="flex flex-col gap-4"
-        id="activités"
-        aria-labelledby="heading-activites"
+    <footer>
+      <div
+        class="mx-auto flex max-w-6xl flex-col justify-between gap-2 px-4 py-8 text-sm text-muted sm:flex-row sm:px-6"
       >
-        <h2 id="heading-activites">Activités</h2>
-
+        <p>© <span id="year"></span> Maison Lacournère</p>
         <p>
-          Découvrez les activités de la région. Cliquez sur les activités
-          ci-dessous pour trouver des idées qui pourront enrichir votre séjour.
-        </p>
-
-        <div class="columns-2 md:columns-3">
           <a
-            class="location-card-indigo"
-            href="https://nistos-ski.fr"
+            class="link"
+            href="https://github.com/remyduthu"
             rel="noopener"
             target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Station de ski nordique de Nistos-Seich</p>
-              <p class="italic text-xs">Nistos-Seich</p>
-            </div>
-            <p class="location-tag-indigo">~15km</p>
-          </a>
-
-          <a
-            class="location-card-indigo"
-            href="https://www.visorando.com/randonnee-nistos.html"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Randonnées pédestres et VTT autour de Nistos-Seich</p>
-              <p class="italic text-xs">Nistos-Seich</p>
-            </div>
-            <p class="location-tag-indigo">~15km</p>
-          </a>
-
-          <a
-            class="location-card-indigo"
-            href="https://www.n-py.com/"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Stations de ski alpin de la vallée</p>
-              <p class="italic text-xs">
-                Saint-Lary, Piau, Peyragudes, Val-Louron...
-              </p>
-            </div>
-            <p class="location-tag-indigo">~40km</p>
-          </a>
-
-          <a
-            class="location-card-indigo"
-            href="https://www.parc-lannemezan.com/"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Parc de Loisirs de la Demi-Lune</p>
-              <p class="italic text-xs">Lannemezan</p>
-            </div>
-            <p class="location-tag-indigo">~25km</p>
-          </a>
-
-          <div class="location-card-indigo">
-            <div class="flex flex-col gap-0">
-              <p>Monuments historiques</p>
-              <p class="italic text-xs">
-                <a
-                  class="external-link"
-                  href="https://grottesdegargas.fr/"
-                  rel="noopener"
-                  target="_blank"
-                  >Les grottes de Gargas</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.chateaudemauvezin.fr/"
-                  rel="noopener"
-                  target="_blank"
-                  >le château de Mauvezin</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://gouffre-esparros.fr/"
-                  rel="noopener"
-                  target="_blank"
-                  >le gouffre d'Esparos</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.st-bertrand.com/"
-                  rel="noopener"
-                  target="_blank"
-                  >la cité médiévale de Saint-Bertrand de Comminges</a
-                >...
-              </p>
-            </div>
-            <p class="location-tag-indigo">~25km</p>
-          </div>
-
-          <div class="location-card-indigo">
-            <div class="flex flex-col gap-0">
-              <p>Espaces aquatiques</p>
-              <p class="italic text-xs">
-                <a
-                  class="external-link"
-                  href="https://ocybelles.fr/"
-                  rel="noopener"
-                  target="_blank"
-                  >Les Ocybelles</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.balnea.fr"
-                  rel="noopener"
-                  target="_blank"
-                  >Balnéa</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.aquensis.fr"
-                  rel="noopener"
-                  target="_blank"
-                  >Aquensis</a
-                >...
-              </p>
-            </div>
-          </div>
-
-          <div class="location-card-indigo">
-            <div class="flex flex-col gap-0">
-              <p>Grands sites Pyrénéens</p>
-              <p class="italic text-xs">
-                <a
-                  class="external-link"
-                  href="https://picdumidi.com"
-                  rel="noopener"
-                  target="_blank"
-                  >Le pic du Midi</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.luz.org/fr/les-incontournables/les-grands-sites/cirque-de-gavarnie/"
-                  rel="noopener"
-                  target="_blank"
-                  >le cirque de Gavarnie</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.tourisme-hautes-pyrenees.com/offre/fiche/les-lacs-du-neouvielle/ITIMID065FS00003"
-                  rel="noopener"
-                  target="_blank"
-                  >les lacs du Néouvielle</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.lourdes.fr/"
-                  rel="noopener"
-                  target="_blank"
-                  >la ville de Lourdes</a
-                >...
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p>
-          Si vous ne parvenez pas à trouver votre bonheur parmi les activités
-          proposées, n'hésitez pas à consulter les sites des offices du tourisme
-          des alentours.
-        </p>
-
-        <div class="columns-2 md:columns-3">
-          <a
-            class="location-card-orange"
-            href="https://tourisme-neste-barousse.fr/"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Office du Tourisme de Neste-Barousse</p>
-              <p class="italic text-xs">Saint-Laurent de Neste</p>
-            </div>
-            <p class="location-tag-orange">~10km</p>
-          </a>
-
-          <a
-            class="location-card-orange"
-            href="https://coeurdespyrenees.com/"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Office du Tourisme du Cœur des Pyrénées</p>
-              <p class="italic text-xs">Lannemezan</p>
-            </div>
-            <p class="location-tag-orange">~25km</p>
-          </a>
-
-          <a
-            class="location-card-orange"
-            href="https://www.ville-bagneresdebigorre.fr/office-de-tourisme"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Office du Tourisme de Bagnères-de-Bigorre</p>
-              <p class="italic text-xs">Bagnères-de-Bigorre</p>
-            </div>
-            <p class="location-tag-orange">~45km</p>
-          </a>
-
-          <a
-            class="location-card-orange"
-            href="https://www.saintlary.com/ete/infos-pratiques/office-de-tourisme"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Office du Tourisme de Saint-Lary-Soulan</p>
-              <p class="italic text-xs">Saint-Lary-Soulan</p>
-            </div>
-            <p class="location-tag-orange">~45km</p>
-          </a>
-
-          <a
-            class="location-card-orange"
-            href="https://www.pyrenees2vallees.com/vallee-du-louron"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Office du Tourisme de la vallée du Louron</p>
-              <p class="italic text-xs">Loundenvielle</p>
-            </div>
-            <p class="location-tag-orange">~50km</p>
-          </a>
-
-          <a
-            class="location-card-orange"
-            href="https://www.pyrenees31.com"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="flex flex-col gap-0">
-              <p>Office du Tourisme de Bagnères-de-Luchon</p>
-              <p class="italic text-xs">Bagnères-de-Luchon</p>
-            </div>
-            <p class="location-tag-orange">~50km</p>
-          </a>
-        </div>
-      </section>
-
-      <section
-        class="flex flex-col gap-4"
-        id="tarifs"
-        aria-labelledby="heading-tarifs"
-      >
-        <h2 id="heading-tarifs">Tarifs</h2>
-
-        <p>
-          Nous vous proposons des tarifs à la semaine et pour les week-end.
-          N'hésitez pas à
-          <a class="underline" href="#contact">nous contacter</a> pour plus
-          d'informations.
-        </p>
-
-        <div
-          class="border border-black flex flex-col gap-8 items-center p-8 rounded-md"
-        >
-          <ul>
-            <li>
-              Les lits seront faits à votre arrivée. Le linge de toilette est
-              fourni.
-            </li>
-            <li>Caution • 500 €</li>
-            <li>Location minimum 2 nuits</li>
-            <li>Bois • 70 € le stère au prorata de la consommation</li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        class="flex flex-col gap-4"
-        id="contact"
-        aria-labelledby="heading-contact"
-      >
-        <h2 id="heading-contact">Contact</h2>
-
-        <ul>
-          <li>
-            Par téléphone au :
-            <a class="external-link" href="tel:0671973479">06 71 97 34 79</a>
-          </li>
-          <li>
-            Par mail à l'adresse :
-            <a class="external-link" href="mailto:anne-marie.fontan@wanadoo.fr"
-              >anne-marie.fontan@wanadoo.fr</a
-            >
-          </li>
-        </ul>
-      </section>
-
-      <footer>
-        <p class="pb-4 text-center text-xs">
-          Site web -
-          <a
-            class="external-link"
-            href="https://github.com/remyduthu/lacournere"
             >@remyduthu</a
           >
-          <br />©
-          <script>
-            document.write(new Date().getFullYear())
-          </script>
-          Maison Lacournère. Tous droits réservés.
         </p>
-      </footer>
-    </main>
+      </div>
+    </footer>
+
+    <dialog
+      id="lightbox"
+      class="m-0 h-dvh max-h-none w-screen max-w-none overflow-hidden bg-transparent p-0"
+      aria-label="Photos de la maison"
+    >
+      <!-- Blurred copy of the current photo, so its colours glow around it. -->
+      <img
+        class="pointer-events-none absolute inset-0 -z-10 size-full scale-110 object-cover opacity-50 blur-3xl saturate-150"
+        alt=""
+        aria-hidden="true"
+        data-ambient
+      />
+      <div class="flex h-full flex-col gap-4 p-4 text-white">
+        <div class="flex items-center justify-between">
+          <p class="text-sm text-white/70 tabular-nums" data-counter></p>
+          <button
+            class="lightbox-button"
+            type="button"
+            aria-label="Fermer"
+            data-close
+          >
+            <svg
+              class="size-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex min-h-0 flex-1 items-center gap-4" data-close>
+          <button
+            class="lightbox-button hidden sm:flex"
+            type="button"
+            aria-label="Photo précédente"
+            data-previous
+          >
+            <svg
+              class="size-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+          <figure
+            class="flex h-full min-w-0 flex-1 flex-col items-center justify-center gap-3"
+            data-close
+          >
+            <img
+              class="max-h-full min-h-0 rounded-lg object-contain shadow-2xl shadow-black/50"
+              alt=""
+              data-photo
+            />
+            <figcaption class="text-sm text-white/80"></figcaption>
+          </figure>
+          <button
+            class="lightbox-button hidden sm:flex"
+            type="button"
+            aria-label="Photo suivante"
+            data-next
+          >
+            <svg
+              class="size-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </dialog>
   </body>
 
   <!-- Structured Data for SEO -->
@@ -735,7 +1214,11 @@
       "@type": "LodgingBusiness",
       "name": "Maison Lacournère",
       "description": "Gîte 4 étoiles pour 8 personnes à Nistos dans les Hautes-Pyrénées. Maison de montagne entièrement équipée avec vue panoramique.",
-      "image": "https://lacournere.com/static/images/landing.jpg",
+      "image": [
+        "https://gite.lacournere.fr/static/images/hero.jpg",
+        "https://gite.lacournere.fr/static/images/house/outside.jpg",
+        "https://gite.lacournere.fr/static/images/house/living-room.jpg"
+      ],
       "starRating": {
         "@type": "Rating",
         "ratingValue": "4"
@@ -752,11 +1235,17 @@
         "latitude": "43.018056",
         "longitude": "0.455556"
       },
-      "url": "https://lacournere.com",
+      "url": "https://gite.lacournere.fr",
+      "sameAs": [
+        "https://maps.google.com/?cid=7798498475744576098",
+        "https://www.gites-de-france-65.com/location-Gite-Nistos-Hautes-pyrenees-65G314411.html",
+        "https://www.gites-de-france.com/fr/occitanie/hautes-pyrenees/lacournere-65g314411",
+        "https://www.airbnb.fr/rooms/42327860",
+        "https://www.tourisme-occitanie.com/fr/fiche/hebergement-locatif/maison-lacournere-nistos_TFOHLOMIP065V52APJU/"
+      ],
       "telephone": "+33671973479",
       "email": "anne-marie.fontan@wanadoo.fr",
       "priceRange": "€€",
-      "petsAllowed": false,
       "numberOfRooms": 4,
       "amenityFeature": [
         {
@@ -793,47 +1282,165 @@
     }
   </script>
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Le linge de maison est-il fourni ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Les lits sont faits quand vous arrivez et les serviettes de toilette sont fournies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de nuits faut-il réserver au minimum ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deux nuits. La maison se loue aussi à la semaine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on venir avec un bébé ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, il y a un lit bébé et une chaise haute dans la maison."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment se chauffe la maison ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Radiateurs électriques dans toutes les pièces et cheminée avec insert. Le bois est compté 70 € le stère, au prorata de la consommation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment peut-on payer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Par chèque, en espèces ou par virement. Une caution de 500 € est demandée."
+          }
+        }
+      ]
+    }
+  </script>
+
   <script>
-    const closeAccordionPanels = () => {
-      const panels = document.getElementsByClassName("accordion-panel")
+    document.getElementById("year").textContent = new Date().getFullYear()
 
-      for (let i = 0; i < panels.length; i++) {
-        const panel = panels[i]
+    const header = document.querySelector(".site-header")
+    const updateHeader = () => {
+      header.dataset.scrolled = window.scrollY > 40
+    }
+    window.addEventListener("scroll", updateHeader, {passive: true})
+    updateHeader()
 
-        panel.style.display = "none"
+    // Blocks ease in once they scroll into view, siblings slightly staggered.
+    const revealObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return
+          entry.target.dataset.visible = ""
+          revealObserver.unobserve(entry.target)
+        })
+      },
+      {rootMargin: "0px 0px -10% 0px"},
+    )
+    // Children of a cascade container appear one after the other.
+    document.querySelectorAll("[data-cascade]").forEach(container => {
+      const step = Number(container.dataset.cascade) || 60
+      ;[...container.children].forEach((child, index) => {
+        child.dataset.reveal = ""
+        child.dataset.revealDelay = index * step
+      })
+    })
+
+    document.querySelectorAll("[data-reveal]").forEach(element => {
+      if (element.dataset.revealDelay) {
+        element.style.setProperty(
+          "--reveal-delay",
+          `${element.dataset.revealDelay}ms`,
+        )
+        revealObserver.observe(element)
+        return
       }
+      const siblings = [...element.parentElement.children].filter(child =>
+        child.hasAttribute("data-reveal"),
+      )
+      element.style.setProperty(
+        "--reveal-delay",
+        `${siblings.indexOf(element) * 60}ms`,
+      )
+      revealObserver.observe(element)
+    })
+
+    document.addEventListener("pointermove", event => {
+      const card = event.target.closest(".card")
+      if (!card) return
+      const bounds = card.getBoundingClientRect()
+      card.style.setProperty("--pointer-x", `${event.clientX - bounds.left}px`)
+      card.style.setProperty("--pointer-y", `${event.clientY - bounds.top}px`)
+    })
+
+    const lightbox = document.getElementById("lightbox")
+    const lightboxImage = lightbox.querySelector("[data-photo]")
+    const lightboxAmbient = lightbox.querySelector("[data-ambient]")
+    const lightboxCaption = lightbox.querySelector("figcaption")
+    const lightboxCounter = lightbox.querySelector("[data-counter]")
+    const photos = [...document.querySelectorAll("[data-gallery] img")]
+    let currentIndex = 0
+
+    const showPhoto = index => {
+      currentIndex = (index + photos.length) % photos.length
+      const photo = photos[currentIndex]
+      const fullSource = photo.dataset.full ?? photo.src
+      lightboxImage.src = fullSource
+      lightboxAmbient.src = fullSource
+      lightboxImage.alt = photo.alt
+      lightboxCaption.textContent = photo.alt
+      lightboxCounter.textContent = `${currentIndex + 1} / ${photos.length}`
     }
 
-    const toggleAccordion = id => {
-      const panel = document.getElementById(id)
+    document.querySelectorAll("[data-gallery]").forEach((button, index) => {
+      button.addEventListener("click", () => {
+        showPhoto(index)
+        lightbox.showModal()
+      })
+    })
 
-      if (panel.style.display === "block") {
-        panel.style.display = "none"
-      } else {
-        closeAccordionPanels()
+    lightbox.querySelector("[data-previous]").onclick = () =>
+      showPhoto(currentIndex - 1)
+    lightbox.querySelector("[data-next]").onclick = () =>
+      showPhoto(currentIndex + 1)
 
-        panel.style.display = "block"
+    // Clicking outside the photo and the controls closes the lightbox.
+    lightbox.addEventListener("click", event => {
+      if (
+        event.target.closest("[data-close]") === event.target ||
+        event.target.closest("button[data-close]")
+      ) {
+        lightbox.close()
       }
-    }
+    })
 
-    const hideOverlay = () => {
-      const overlay = document.getElementById("overlay")
+    lightbox.addEventListener("keydown", event => {
+      if (event.key === "ArrowLeft") showPhoto(currentIndex - 1)
+      if (event.key === "ArrowRight") showPhoto(currentIndex + 1)
+    })
 
-      overlay.style.opacity = 0
-      overlay.style.visibility = "hidden"
-    }
-
-    const showOverlay = (image, caption) => {
-      const overlay = document.getElementById("overlay")
-
-      const img = overlay.getElementsByTagName("img")[0]
-      img.setAttribute("src", image)
-
-      const p = overlay.getElementsByTagName("p")[0]
-      p.innerHTML = caption
-
-      overlay.style.opacity = 1
-      overlay.style.visibility = "visible"
-    }
+    let touchStartX = 0
+    lightbox.addEventListener("touchstart", event => {
+      touchStartX = event.touches[0].clientX
+    })
+    lightbox.addEventListener("touchend", event => {
+      const deltaX = event.changedTouches[0].clientX - touchStartX
+      if (Math.abs(deltaX) > 50) showPhoto(currentIndex + (deltaX < 0 ? 1 : -1))
+    })
   </script>
 </html>
