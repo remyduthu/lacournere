@@ -1,10 +1,11 @@
 @layer properties;
 @layer theme, base, components, utilities;
-/*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+      "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
     --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
@@ -59,7 +60,7 @@
     -moz-tab-size: 4;
       -o-tab-size: 4;
          tab-size: 4;
-    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
     font-feature-settings: var(--default-font-feature-settings, normal);
     font-variation-settings: var(--default-font-variation-settings, normal);
     -webkit-tap-highlight-color: transparent;
@@ -111,7 +112,7 @@
     border-color: inherit;
     border-collapse: collapse;
   }
-  :-moz-focusring {
+  :-moz-focusring:where(:not(iframe)) {
     outline: auto;
   }
   progress {
@@ -221,13 +222,13 @@
     position: fixed;
   }
   .top-0 {
-    top: calc(var(--spacing) * 0);
+    top: 0px;
   }
   .right-0 {
-    right: calc(var(--spacing) * 0);
+    right: 0px;
   }
   .left-0 {
-    left: calc(var(--spacing) * 0);
+    left: 0px;
   }
   .z-10 {
     z-index: 10;
@@ -312,7 +313,7 @@
     justify-content: center;
   }
   .gap-0 {
-    gap: calc(var(--spacing) * 0);
+    gap: 0px;
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -426,43 +427,33 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
-  .hover\:brightness-75 {
-    &:hover {
-      @media (hover: hover) {
-        --tw-brightness: brightness(75%);
-        filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-      }
+  @media (hover: hover) {
+    .hover\:brightness-75:hover {
+      --tw-brightness: brightness(75%);
+      filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
     }
   }
-  .sm\:block {
-    @media (width >= 40rem) {
+  @media (width >= 40rem) {
+    .sm\:block {
       display: block;
     }
-  }
-  .sm\:columns-3 {
-    @media (width >= 40rem) {
+    .sm\:columns-3 {
       -moz-columns: 3;
            columns: 3;
     }
-  }
-  .sm\:flex-row {
-    @media (width >= 40rem) {
+    .sm\:flex-row {
       flex-direction: row;
     }
-  }
-  .sm\:gap-8 {
-    @media (width >= 40rem) {
+    .sm\:gap-8 {
       gap: calc(var(--spacing) * 8);
     }
-  }
-  .sm\:text-6xl {
-    @media (width >= 40rem) {
+    .sm\:text-6xl {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
     }
   }
-  .md\:columns-3 {
-    @media (width >= 48rem) {
+  @media (width >= 48rem) {
+    .md\:columns-3 {
       -moz-columns: 3;
            columns: 3;
     }
@@ -488,6 +479,7 @@
   font-weight: var(--font-weight-normal);
   color: var(--color-blue-500);
   &::after {
+    content: var(--tw-content);
     --tw-content: ' ↗';
     content: var(--tw-content);
   }
