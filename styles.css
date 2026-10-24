@@ -1,27 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
 
-  /* Warm paper, pine green and roof-tile terracotta, taken from the photos. */
-  --color-paper: #f7f4ee;
-  --color-sand: #ece6db;
-  --color-ink: #1f2420;
-  --color-muted: #5f665f;
-  --color-line: #ddd5c7;
-  --color-pine: #2f4a3a;
-  --color-pine-dark: #22372b;
-  --color-terracotta: #b8572f;
+  /* Warm peach background with orange and indigo accents, from the original site. */
+  --color-paper: var(--color-orange-50);
+  --color-sand: var(--color-orange-100);
+  --color-ink: var(--color-stone-800);
+  --color-muted: var(--color-stone-600);
+  --color-line: var(--color-orange-200);
 
-  /* Sunset tones from the hero photo, used for the soft glows. */
-  --color-glow-warm: rgb(240 140 95 / 0.75);
-  --color-glow-pink: rgb(230 130 185 / 0.65);
-  --color-glow-cool: rgb(130 140 230 / 0.55);
+  /* Orange, pink and indigo tones used for the soft glows. */
+  --color-glow-warm: rgb(251 146 60 / 0.7);
+  --color-glow-pink: rgb(244 114 182 / 0.55);
+  --color-glow-cool: rgb(129 140 248 / 0.6);
 }
 
 @utility button {
-  @apply relative isolate inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition;
+  @apply relative isolate inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium tracking-wide transition duration-300;
+}
+
+/* Tinted card with a distance tag, laid out in newspaper-style columns. */
+@utility location-card {
+  @apply mb-3 flex w-full break-inside-avoid flex-col items-start gap-2 rounded-md border px-4 py-3 text-stone-700 transition duration-300;
 }
 
 @layer base {
@@ -31,11 +32,10 @@
   }
 
   body {
-    @apply bg-paper font-sans text-ink antialiased;
+    @apply bg-paper font-light tracking-wide text-ink antialiased;
   }
 
-  /* The soft glows spill past the screen edges; they must not create a sideways scroll.
-     Set on main rather than body, where the browser would move it to the viewport. */
+  /* The full-width hero image must not create a sideways scroll on phones. */
   main {
     overflow-x: clip;
   }
@@ -45,22 +45,26 @@
   }
 
   h3 {
-    @apply text-lg font-semibold;
+    @apply font-semibold;
   }
 }
 
 @layer components {
-  .eyebrow {
-    @apply text-xs font-semibold tracking-[0.2em] text-terracotta uppercase;
+  .link {
+    @apply font-normal underline decoration-orange-300 decoration-2 underline-offset-4 transition-colors hover:decoration-orange-500;
   }
 
-  .link {
-    @apply font-medium underline decoration-terracotta/50 decoration-2 underline-offset-4 transition-colors hover:decoration-terracotta;
+  .external-link {
+    @apply font-normal text-indigo-600 after:content-['_↗'] hover:underline;
+  }
+
+  .nav-item {
+    @apply rounded-md p-2 text-xs uppercase transition-colors duration-300 hover:bg-white/15 sm:tracking-widest;
   }
 
   .button-primary {
     @apply button text-white;
-    --button-background: var(--color-pine);
+    --button-background: var(--color-ink);
   }
 
   .button-light {
@@ -68,12 +72,8 @@
     --button-background: rgb(255 255 255 / 0.92);
   }
 
-  .button-outline {
-    @apply button border border-line bg-white hover:border-ink;
-  }
-
   .card {
-    @apply relative rounded-2xl border border-line bg-white p-6;
+    @apply relative rounded-md border border-line bg-white p-6;
   }
 
   /* Soft light that follows the cursor across a card. */
@@ -82,13 +82,35 @@
     @apply pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-500;
     background: radial-gradient(
       22rem circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
-      rgb(240 140 95 / 0.09),
+      rgb(251 146 60 / 0.1),
       transparent 70%
     );
   }
 
   .card:hover::after {
     @apply opacity-100;
+  }
+
+  .card-orange {
+    @apply rounded-md border border-orange-200 bg-orange-100 p-6;
+  }
+
+  .card-indigo {
+    @apply rounded-md border border-indigo-200 bg-indigo-100 p-6;
+  }
+
+  /* Short facts joined by bullets, as on the original site. */
+  .facts {
+    @apply flex flex-wrap items-center gap-y-1 text-sm;
+  }
+
+  .facts li {
+    @apply inline-flex items-center;
+  }
+
+  .facts li:not(:last-child)::after {
+    content: "•";
+    @apply mx-2.5 opacity-60;
   }
 
   .checklist {
@@ -101,27 +123,68 @@
 
   .checklist li::before {
     content: "";
-    @apply mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-terracotta;
+    @apply mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-orange-400;
   }
 
   .gallery-item {
-    @apply relative block cursor-zoom-in overflow-hidden rounded-xl bg-sand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine;
+    @apply relative block cursor-zoom-in overflow-hidden rounded-md bg-sand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400;
   }
 
   .gallery-item img {
-    @apply size-full object-cover transition duration-200;
+    @apply size-full object-cover transition duration-300;
   }
 
   .gallery-item:hover img {
-    @apply brightness-110;
+    @apply brightness-75;
   }
 
-  .place-row {
-    @apply flex items-center justify-between gap-4 border-b border-line py-3 last:border-b-0;
+  /* Whole-card links get the same hover as the other cards, with an arrow showing they lead elsewhere. */
+  a:is(.location-card-indigo, .location-card-orange) {
+    @apply relative isolate overflow-hidden pr-10 hover:border-ink;
   }
 
-  .distance {
-    @apply shrink-0 rounded-full bg-sand px-2.5 py-0.5 text-xs font-semibold text-pine tabular-nums;
+  a:is(.location-card-indigo, .location-card-orange)::after {
+    content: "↗";
+    @apply absolute top-3 right-4 opacity-50 transition duration-300;
+  }
+
+  a:is(.location-card-indigo, .location-card-orange):hover::after {
+    @apply translate-x-0.5 -translate-y-0.5 opacity-100;
+  }
+
+  /* Soft light that follows the cursor across a card. */
+  a:is(.location-card-indigo, .location-card-orange)::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(
+      22rem circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+      rgb(251 146 60 / 0.1),
+      transparent 70%
+    );
+  }
+
+  a:is(.location-card-indigo, .location-card-orange):hover::before {
+    @apply opacity-100;
+  }
+
+  .location-card-indigo {
+    @apply location-card border-indigo-200 bg-indigo-100;
+  }
+
+  .location-card-orange {
+    @apply location-card border-orange-200 bg-orange-100;
+  }
+
+  .location-tag {
+    @apply rounded-md px-2 text-sm text-white tabular-nums;
+  }
+
+  .location-card-indigo .location-tag {
+    @apply bg-indigo-400;
+  }
+
+  .location-card-orange .location-tag {
+    @apply bg-orange-400;
   }
 
   .faq {
@@ -129,13 +192,13 @@
   }
 
   .faq summary {
-    @apply flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium transition-colors hover:text-pine;
+    @apply flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-normal transition-colors hover:text-orange-700;
   }
 
   /* Plus sign that turns into a cross when the answer is open. */
   .faq summary::after {
     content: "+";
-    @apply flex size-7 shrink-0 items-center justify-center rounded-full bg-sand text-lg leading-none text-pine transition-transform duration-300;
+    @apply flex size-7 shrink-0 items-center justify-center rounded-md bg-orange-100 text-lg leading-none text-orange-700 transition-transform duration-300;
   }
 
   .faq[open] summary::after {
@@ -168,7 +231,36 @@
   }
 }
 
-/* Soft sunset-coloured halo behind an element. */
+#lightbox::backdrop {
+  @apply bg-black/85;
+}
+
+#lightbox[open] {
+  animation: fade-in 200ms ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Transparent over the hero, then the plain peach bar of the original site once the page scrolls. */
+.site-header {
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+.site-header[data-scrolled="true"] {
+  @apply bg-paper text-ink;
+}
+
+.site-header[data-scrolled="true"] .nav-item:hover {
+  @apply bg-orange-100;
+}
+
+/* Soft orange-to-indigo halo behind an element. */
 .glow {
   position: relative;
   isolation: isolate;
@@ -192,7 +284,7 @@
     ),
     radial-gradient(40% 55% at 90% 25%, var(--color-glow-cool), transparent 70%);
   filter: blur(48px);
-  opacity: 0.85;
+  opacity: 0.3;
   animation: glow-drift 14s ease-in-out infinite alternate;
   pointer-events: none;
 }
@@ -200,7 +292,7 @@
 /* Lighter halo for large areas such as the photo grid. */
 .glow-soft::before {
   inset: -1.5rem;
-  opacity: 0.35;
+  opacity: 0.12;
   filter: blur(56px);
 }
 
@@ -211,20 +303,8 @@
     linear-gradient(white, white) padding-box,
     linear-gradient(
         120deg,
-        rgb(238 150 110 / 0.7),
-        rgb(226 150 190 / 0.5),
-        var(--color-line) 60%
-      )
-      border-box;
-}
-
-dl.glow-border {
-  background:
-    linear-gradient(var(--color-line), var(--color-line)) padding-box,
-    linear-gradient(
-        120deg,
-        rgb(238 150 110 / 0.8),
-        rgb(226 150 190 / 0.6),
+        var(--color-glow-warm),
+        var(--color-glow-cool),
         var(--color-line) 60%
       )
       border-box;
@@ -234,47 +314,6 @@ dl.glow-border {
   to {
     transform: translate3d(1.5rem, -1rem, 0) scale(1.05);
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .glow::before {
-    animation: none;
-  }
-}
-
-#lightbox::backdrop {
-  @apply bg-black/90 backdrop-blur-sm;
-}
-
-#lightbox[open] {
-  animation: fade-in 200ms ease-out;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-}
-
-/* Transparent over the hero, fades to a frosted bar once the page scrolls. */
-.site-header {
-  backdrop-filter: blur(0);
-  transition:
-    background-color 500ms ease,
-    border-color 500ms ease,
-    color 500ms ease,
-    backdrop-filter 500ms ease,
-    box-shadow 500ms ease;
-}
-
-.site-header[data-scrolled="true"] {
-  @apply border-line bg-paper/85 text-ink shadow-sm shadow-black/5;
-  backdrop-filter: blur(12px);
-}
-
-/* Once the header is solid, the white button needs an edge to stand out. */
-.site-header[data-scrolled="true"] .button-light {
-  @apply ring-1 ring-line;
 }
 
 /* Shimmering halo behind the main buttons. */
@@ -301,7 +340,7 @@ dl.glow-border {
     transparent 330deg
   );
   filter: blur(6px);
-  opacity: 0.4;
+  opacity: 0.2;
   transition:
     opacity 400ms ease,
     inset 400ms ease;
@@ -311,7 +350,7 @@ dl.glow-border {
 .button-primary:hover::before,
 .button-light:hover::before {
   inset: -4px;
-  opacity: 0.7;
+  opacity: 0.4;
 }
 
 /* The button fill sits between the halo and the label, so the halo only shows around the edges. */
@@ -327,7 +366,7 @@ dl.glow-border {
 }
 
 .button-primary:hover {
-  --button-background: var(--color-pine-dark);
+  --button-background: var(--color-stone-700);
 }
 
 .button-light:hover {
@@ -363,8 +402,7 @@ dl.glow-border {
   animation: hero-zoom 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-.hero-content > *,
-.key-facts {
+.hero-content > * {
   animation: hero-rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
@@ -378,10 +416,6 @@ dl.glow-border {
 
 .hero-content > :nth-child(4) {
   animation-delay: 240ms;
-}
-
-.key-facts {
-  animation-delay: 320ms;
 }
 
 @keyframes hero-zoom {
@@ -399,16 +433,13 @@ dl.glow-border {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  #lightbox[open],
+  .glow::before,
   .button-primary::before,
   .button-light::before,
   .hero-image,
-  .hero-content > *,
-  .key-facts {
+  .hero-content > * {
     animation: none;
-  }
-
-  .site-header {
-    transition-duration: 200ms;
   }
 
   /* Keep the cascade as a plain fade, without movement or blur. */
