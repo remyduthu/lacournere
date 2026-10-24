@@ -53,19 +53,10 @@
 }
 
 @layer components {
-  /* Phone and email links: dark text, underlined on hover, like links to other websites. */
-  .link {
-    @apply font-normal text-ink underline-offset-4 hover:underline;
-  }
-
-  /* Links to other websites: a small arrow after the text, underlined on hover. */
+  /* Links in running text: dark text, underlined on hover. */
+  .link,
   .external-link {
     @apply font-normal text-ink underline-offset-4 hover:underline;
-  }
-
-  .external-link::after {
-    content: "↗";
-    @apply ml-0.5 text-[0.75em] text-muted opacity-60;
   }
 
   .nav-item {
@@ -119,18 +110,9 @@
     @apply brightness-75;
   }
 
-  /* Whole-card links get a dark border on hover, with an arrow showing they lead elsewhere. */
+  /* Whole-card links get a dark border on hover. */
   a:is(.location-card-primary, .location-card-secondary) {
-    @apply relative pr-10 hover:border-ink;
-  }
-
-  a:is(.location-card-primary, .location-card-secondary)::after {
-    content: "↗";
-    @apply absolute top-3 right-3 text-xs text-muted opacity-40 transition duration-300;
-  }
-
-  a:is(.location-card-primary, .location-card-secondary):hover::after {
-    @apply opacity-80;
+    @apply hover:border-ink;
   }
 
   .location-card-primary {

@@ -103,7 +103,7 @@ const english = {
   "prices.headline": "From €100 a night",
   "prices.minimum": "Minimum stay",
   "prices.minimumValue": "2&nbsp;nights",
-  "prices.linen": "Beds made and towels",
+  "prices.linen": "Sheets and towels",
   "prices.included": "Provided",
   "prices.wifiValue": "Included",
   "prices.deposit": "Deposit",

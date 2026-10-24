@@ -205,7 +205,14 @@
               ></span>
               Gîtes&nbsp;de&nbsp;France
             </li>
-            <li data-i18n="facts.price">À partir de 100&nbsp;€ la nuit</li>
+            <li>
+              <a
+                class="underline-offset-4 hover:underline"
+                href="#tarifs"
+                data-i18n="facts.price"
+                >À partir de 100&nbsp;€ la nuit</a
+              >
+            </li>
           </ul>
           <div class="flex flex-wrap justify-center gap-3">
             <a class="button-light" href="#contact" data-i18n="hero.contact"
@@ -243,7 +250,10 @@
                 loading="lazy"
               />
             </button>
-            <div data-cascade class="flex flex-col justify-end gap-4 md:p-8">
+            <div
+              data-cascade
+              class="flex flex-col justify-end gap-4 max-md:order-first md:p-8"
+            >
               <h2 id="heading-maison" data-i18n="house.title">La maison</h2>
               <p class="text-muted" data-i18n="house.text">
                 Dans son écrin vert, la maison Lacournère vous invite au calme
@@ -424,131 +434,127 @@
           </div>
 
           <!-- Rooms and equipment. -->
-          <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            <div data-reveal class="flex flex-col gap-3">
-              <button
-                class="gallery-item aspect-[3/2]"
-                data-gallery
-                type="button"
-              >
-                <img
-                  src="static/images/house/kitchen.jpg"
-                  alt="La cuisine"
-                  data-i18n-alt="photos.kitchen"
-                  width="1600"
-                  height="1067"
-                  loading="lazy"
-                />
-              </button>
-              <div class="flex flex-col gap-4 md:p-8">
-                <h3 data-i18n="rooms.groundFloor">Au rez-de-chaussée</h3>
-                <ul class="checklist">
-                  <li data-i18n="rooms.kitchen">
-                    Cuisine équipée&nbsp;: lave-vaisselle, four, micro-ondes,
-                    réfrigérateur-congélateur, bouilloire
-                  </li>
-                  <li data-i18n="rooms.coffee">
-                    Cafetières filtre et Senseo, grille-pain
-                  </li>
-                  <li data-i18n="rooms.raclette">
-                    Appareils à raclette, grill et fondue
-                  </li>
-                  <li data-i18n="rooms.livingRoom">
-                    Salon avec télévision, lecteur DVD et wifi
-                  </li>
-                  <li data-i18n="rooms.fireplace">Cheminée avec insert</li>
-                  <li data-i18n="rooms.shower">Douche, WC et cellier</li>
-                </ul>
-              </div>
+          <div class="grid gap-3 md:grid-cols-3">
+            <button
+              class="gallery-item aspect-[3/2]"
+              data-gallery
+              data-reveal
+              type="button"
+            >
+              <img
+                src="static/images/house/kitchen.jpg"
+                alt="La cuisine"
+                data-i18n-alt="photos.kitchen"
+                width="1600"
+                height="1067"
+                loading="lazy"
+              />
+            </button>
+
+            <button
+              class="gallery-item aspect-[3/2]"
+              data-gallery
+              data-reveal
+              type="button"
+            >
+              <img
+                src="static/images/house/bedroom-3.jpg"
+                alt="Une chambre"
+                data-i18n-alt="photos.bedroom"
+                width="1600"
+                height="1067"
+                loading="lazy"
+              />
+            </button>
+
+            <button
+              class="gallery-item aspect-[3/2]"
+              data-gallery
+              data-reveal
+              type="button"
+            >
+              <img
+                src="static/images/house/courtyard.jpg"
+                alt="La cour"
+                data-i18n-alt="photos.courtyard"
+                width="1600"
+                height="1067"
+                loading="lazy"
+              />
+            </button>
+
+            <div data-reveal class="flex flex-col gap-4 md:p-8">
+              <h3 data-i18n="rooms.groundFloor">Au rez-de-chaussée</h3>
+              <ul class="checklist">
+                <li data-i18n="rooms.kitchen">
+                  Cuisine équipée&nbsp;: lave-vaisselle, four, micro-ondes,
+                  réfrigérateur-congélateur, bouilloire
+                </li>
+                <li data-i18n="rooms.coffee">
+                  Cafetières filtre et Senseo, grille-pain
+                </li>
+                <li data-i18n="rooms.raclette">
+                  Appareils à raclette, grill et fondue
+                </li>
+                <li data-i18n="rooms.livingRoom">
+                  Salon avec télévision, lecteur DVD et wifi
+                </li>
+                <li data-i18n="rooms.fireplace">Cheminée avec insert</li>
+                <li data-i18n="rooms.shower">Douche, WC et cellier</li>
+              </ul>
             </div>
 
-            <div data-reveal class="flex flex-col gap-3">
-              <button
-                class="gallery-item aspect-[3/2]"
-                data-gallery
-                type="button"
-              >
-                <img
-                  src="static/images/house/bedroom-3.jpg"
-                  alt="Une chambre"
-                  data-i18n-alt="photos.bedroom"
-                  width="1600"
-                  height="1067"
-                  loading="lazy"
-                />
-              </button>
-              <div class="flex flex-col gap-4 md:p-8">
-                <h3 data-i18n="rooms.upstairs">À l'étage</h3>
-                <ul class="flex flex-col divide-y divide-line text-sm">
-                  <li class="flex justify-between py-2 first:pt-0">
-                    <span data-i18n="rooms.bedroom1">Chambre 1</span>
-                    <span class="text-muted" data-i18n="rooms.bed140"
-                      >1 lit de 140</span
-                    >
-                  </li>
-                  <li class="flex justify-between py-2">
-                    <span data-i18n="rooms.bedroom2">Chambre 2</span>
-                    <span class="text-muted" data-i18n="rooms.bed180"
-                      >1 lit de 180</span
-                    >
-                  </li>
-                  <li class="flex justify-between py-2">
-                    <span data-i18n="rooms.bedroom3">Chambre 3</span>
-                    <span class="text-muted" data-i18n="rooms.bed140"
-                      >1 lit de 140</span
-                    >
-                  </li>
-                  <li class="flex justify-between py-2">
-                    <span data-i18n="rooms.bedroom4">Chambre 4</span>
-                    <span class="text-muted" data-i18n="rooms.beds90"
-                      >2 lits de 90</span
-                    >
-                  </li>
-                </ul>
-                <p class="text-sm text-muted" data-i18n="rooms.upstairsMore">
-                  Une salle de bains, un WC séparé, des couvertures en plus et
-                  un coin bibliothèque avec livres et jeux de société.
-                </p>
-              </div>
+            <div data-reveal class="flex flex-col gap-4 md:p-8">
+              <h3 data-i18n="rooms.upstairs">À l'étage</h3>
+              <ul class="flex flex-col divide-y divide-line text-sm">
+                <li class="flex justify-between py-2 first:pt-0">
+                  <span data-i18n="rooms.bedroom1">Chambre 1</span>
+                  <span class="text-muted" data-i18n="rooms.bed140"
+                    >1 lit de 140</span
+                  >
+                </li>
+                <li class="flex justify-between py-2">
+                  <span data-i18n="rooms.bedroom2">Chambre 2</span>
+                  <span class="text-muted" data-i18n="rooms.bed180"
+                    >1 lit de 180</span
+                  >
+                </li>
+                <li class="flex justify-between py-2">
+                  <span data-i18n="rooms.bedroom3">Chambre 3</span>
+                  <span class="text-muted" data-i18n="rooms.bed140"
+                    >1 lit de 140</span
+                  >
+                </li>
+                <li class="flex justify-between py-2">
+                  <span data-i18n="rooms.bedroom4">Chambre 4</span>
+                  <span class="text-muted" data-i18n="rooms.beds90"
+                    >2 lits de 90</span
+                  >
+                </li>
+              </ul>
+              <p class="text-sm text-muted" data-i18n="rooms.upstairsMore">
+                Une salle de bains, un WC séparé, des couvertures en plus et un
+                coin bibliothèque avec livres et jeux de société.
+              </p>
             </div>
 
-            <div data-reveal class="flex flex-col gap-3">
-              <button
-                class="gallery-item aspect-[3/2]"
-                data-gallery
-                type="button"
-              >
-                <img
-                  src="static/images/house/courtyard.jpg"
-                  alt="La cour"
-                  data-i18n-alt="photos.courtyard"
-                  width="1600"
-                  height="1067"
-                  loading="lazy"
-                />
-              </button>
-              <div class="flex flex-col gap-4 md:p-8">
-                <h3 data-i18n="rooms.also">Et aussi</h3>
-                <ul class="checklist">
-                  <li data-i18n="rooms.linen">
-                    Lits faits à l'arrivée, linge de toilette fourni
-                  </li>
-                  <li data-i18n="rooms.laundry">
-                    Lave-linge, étendoir, table et fer à repasser
-                  </li>
-                  <li data-i18n="rooms.baby">Lit bébé et chaise haute</li>
-                  <li data-i18n="rooms.hairDryer">
-                    Sèche-cheveux et aspirateur
-                  </li>
-                  <li data-i18n="rooms.barbecue">
-                    Barbecue et salon de jardin
-                  </li>
-                  <li data-i18n="rooms.heating">
-                    Chauffage électrique dans toutes les pièces
-                  </li>
-                  <li data-i18n="rooms.parking">Parking</li>
-                </ul>
-              </div>
+            <div data-reveal class="flex flex-col gap-4 md:p-8">
+              <h3 data-i18n="rooms.also">Et aussi</h3>
+              <ul class="checklist">
+                <li data-i18n="rooms.linen">
+                  Lits faits à l'arrivée, linge de toilette fourni
+                </li>
+                <li data-i18n="rooms.laundry">
+                  Lave-linge, étendoir, table et fer à repasser
+                </li>
+                <li data-i18n="rooms.baby">Lit bébé et chaise haute</li>
+                <li data-i18n="rooms.hairDryer">Sèche-cheveux et aspirateur</li>
+                <li data-i18n="rooms.barbecue">Barbecue et salon de jardin</li>
+                <li data-i18n="rooms.heating">
+                  Chauffage électrique dans toutes les pièces
+                </li>
+                <li data-i18n="rooms.parking">Parking</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -571,519 +577,533 @@
             </p>
           </div>
 
-          <div
-            class="grid gap-x-12 gap-y-10 rounded-sm bg-primary-tint p-8 sm:grid-cols-2 sm:p-12"
-          >
-            <article data-reveal class="flex flex-col gap-2">
-              <h3 class="season" data-i18n="seasons.winter">En hiver</h3>
-              <p class="text-sm text-muted" data-i18n="seasons.winterText">
-                L'<a
-                  class="external-link"
-                  href="https://nistos-ski.fr"
-                  rel="noopener"
-                  target="_blank"
-                  >espace nordique de Nistos</a
-                >, entre 1&nbsp;600 et 1&nbsp;800&nbsp;mètres, est à quelques
-                kilomètres&nbsp;: une quarantaine de kilomètres de pistes de ski
-                de fond, des itinéraires en raquettes et deux pistes de luge,
-                avec location du matériel sur place. Pour le ski alpin, comptez
-                40&nbsp;km jusqu'à
-                <a
-                  class="external-link"
-                  href="https://www.saintlary.com/"
-                  rel="noopener"
-                  target="_blank"
-                  >Saint-Lary</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Peyragudes+station+de+ski"
-                  rel="noopener"
-                  target="_blank"
-                  >Peyragudes</a
-                >,
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Piau-Engaly+station+de+ski"
-                  rel="noopener"
-                  target="_blank"
-                  >Piau</a
-                >
-                ou
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Val+Louron+station+de+ski"
-                  rel="noopener"
-                  target="_blank"
-                  >Val-Louron</a
-                >.
-              </p>
-            </article>
-
-            <article data-reveal class="flex flex-col gap-2">
-              <h3 class="season" data-i18n="seasons.summer">
-                Au printemps et en été
-              </h3>
-              <p class="text-sm text-muted" data-i18n="seasons.summerText">
-                Des balades pour tous&nbsp;: la
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Table+d%27orientation+du+Tourroc+Nistos"
-                  rel="noopener"
-                  target="_blank"
-                  >table d'orientation du Tourroc</a
-                >, les
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Cabanes+de+J%C3%A9zeau"
-                  rel="noopener"
-                  target="_blank"
-                  >cabanes de Jézeau</a
-                >
-                ou le
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Pic+de+Mountarrouy"
-                  rel="noopener"
-                  target="_blank"
-                  >pic de Mountarrouy</a
-                >
-                pour la vue. Les cyclistes ont les cols de
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Col+de+Bal%C3%A8s"
-                  rel="noopener"
-                  target="_blank"
-                  >Balès</a
-                >, d'<a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Col+d%27Aspin"
-                  rel="noopener"
-                  target="_blank"
-                  >Aspin</a
-                >, de
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Col+de+Peyresourde"
-                  rel="noopener"
-                  target="_blank"
-                  >Peyresourde</a
-                >
-                et le
-                <a
-                  class="external-link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Col+du+Tourmalet"
-                  rel="noopener"
-                  target="_blank"
-                  >Tourmalet</a
-                >
-                à portée de roue. Le Nistos et la Neste sont connus pour leurs
-                truites.
-              </p>
-            </article>
-
-            <article data-reveal class="flex flex-col gap-2">
-              <h3 class="season" data-i18n="seasons.autumn">En automne</h3>
-              <p class="text-sm text-muted" data-i18n="seasons.autumnText">
-                De mi-septembre à mi-octobre, c'est la saison du brame du cerf.
-                On l'entend surtout le soir, et avec un peu de chance on
-                aperçoit les cerfs à la tombée de la nuit.
-              </p>
-            </article>
-
-            <article data-reveal class="flex flex-col gap-2">
-              <h3 class="season" data-i18n="seasons.children">
-                Avec des enfants
-              </h3>
-              <p class="text-sm text-muted" data-i18n="seasons.childrenText">
-                Lit bébé, chaise haute, jeux de société et un grand terrain pour
-                courir. Quand il pleut, il y a le
-                <a
-                  class="external-link"
-                  href="https://www.parc-lannemezan.com/"
-                  rel="noopener"
-                  target="_blank"
-                  >parc de la Demi-Lune</a
-                >
-                à Lannemezan et plusieurs piscines et espaces aquatiques dans la
-                vallée.
-              </p>
-            </article>
-          </div>
-
-          <div class="gap-x-3 sm:columns-2 md:columns-3" data-cascade="40">
-            <a
-              class="location-card-primary"
-              href="https://nistos-ski.fr"
-              rel="noopener"
-              target="_blank"
+          <div class="flex flex-col gap-3">
+            <div
+              class="grid gap-x-12 gap-y-10 rounded-sm bg-primary-tint p-8 sm:grid-cols-2 sm:p-12"
             >
-              <img
-                class="drawing"
-                src="static/drawings/nordic-skiing.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.nordic"
-                  >Espace nordique de Nistos</span
-                >
-                <span
-                  class="block text-xs italic"
-                  data-i18n="surroundings.nordicText"
-                  >Ski de fond, raquettes, luge</span
-                >
-              </span>
-              <span class="location-tag" data-i18n="surroundings.nearby"
-                >Tout près</span
-              >
-            </a>
-
-            <a
-              class="location-card-primary"
-              href="https://www.visorando.com/randonnee-nistos.html"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/hiking.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.hiking"
-                  >Randonnées à pied et à VTT</span
-                >
-                <span
-                  class="block text-xs italic"
-                  data-i18n="surroundings.hikingText"
-                  >Au départ de Nistos et de Seich</span
-                >
-              </span>
-              <span class="location-tag" data-i18n="surroundings.nearby"
-                >Tout près</span
-              >
-            </a>
-
-            <a
-              class="location-card-primary"
-              href="https://www.parc-lannemezan.com/"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/park.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.park"
-                  >Parc de loisirs de la Demi-Lune</span
-                >
-                <span class="block text-xs italic">Lannemezan</span>
-              </span>
-              <span class="location-tag">25&nbsp;km</span>
-            </a>
-
-            <div class="location-card-primary">
-              <img
-                class="drawing"
-                src="static/drawings/castle.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.heritage"
-                  >Grottes et châteaux</span
-                >
-                <span class="block text-xs italic">
-                  <a
+              <article data-reveal class="flex flex-col gap-2">
+                <h3 class="season" data-i18n="seasons.winter">En hiver</h3>
+                <p class="text-sm text-muted" data-i18n="seasons.winterText">
+                  L'<a
                     class="external-link"
-                    href="https://grottesdegargas.fr/"
+                    href="https://nistos-ski.fr"
                     rel="noopener"
                     target="_blank"
-                    data-i18n="surroundings.gargas"
-                    >Grottes de Gargas</a
+                    >espace nordique de Nistos</a
+                  >, entre 1&nbsp;600 et 1&nbsp;800&nbsp;mètres, est à quelques
+                  kilomètres&nbsp;: une quarantaine de kilomètres de pistes de
+                  ski de fond, des itinéraires en raquettes et deux pistes de
+                  luge, avec location du matériel sur place. Pour le ski alpin,
+                  comptez 40&nbsp;km jusqu'à
+                  <a
+                    class="external-link"
+                    href="https://www.saintlary.com/"
+                    rel="noopener"
+                    target="_blank"
+                    >Saint-Lary</a
                   >,
                   <a
                     class="external-link"
-                    href="https://www.chateaudemauvezin.fr/"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Peyragudes+station+de+ski"
                     rel="noopener"
                     target="_blank"
-                    data-i18n="surroundings.mauvezin"
-                    >château de Mauvezin</a
+                    >Peyragudes</a
                   >,
                   <a
                     class="external-link"
-                    href="https://gouffre-esparros.fr/"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Piau-Engaly+station+de+ski"
                     rel="noopener"
                     target="_blank"
-                    data-i18n="surroundings.esparros"
-                    >gouffre d'Esparros</a
-                  >,
-                  <a
-                    class="external-link"
-                    href="https://www.st-bertrand.com/"
-                    rel="noopener"
-                    target="_blank"
-                    >Saint-Bertrand-de-Comminges</a
+                    >Piau</a
                   >
-                </span>
-              </span>
-              <span class="location-tag">25&nbsp;km</span>
+                  ou
+                  <a
+                    class="external-link"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Val+Louron+station+de+ski"
+                    rel="noopener"
+                    target="_blank"
+                    >Val-Louron</a
+                  >.
+                </p>
+              </article>
+
+              <article data-reveal class="flex flex-col gap-2">
+                <h3 class="season" data-i18n="seasons.summer">
+                  Au printemps et en été
+                </h3>
+                <p class="text-sm text-muted" data-i18n="seasons.summerText">
+                  Des balades pour tous&nbsp;: la
+                  <a
+                    class="external-link"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Table+d%27orientation+du+Tourroc+Nistos"
+                    rel="noopener"
+                    target="_blank"
+                    >table d'orientation du Tourroc</a
+                  >, les
+                  <a
+                    class="external-link"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Cabanes+de+J%C3%A9zeau"
+                    rel="noopener"
+                    target="_blank"
+                    >cabanes de Jézeau</a
+                  >
+                  ou le
+                  <a
+                    class="external-link"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Pic+de+Mountarrouy"
+                    rel="noopener"
+                    target="_blank"
+                    >pic de Mountarrouy</a
+                  >
+                  pour la vue. Les cyclistes ont les cols de
+                  <a
+                    class="external-link"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Col+de+Bal%C3%A8s"
+                    rel="noopener"
+                    target="_blank"
+                    >Balès</a
+                  >, d'<a
+                    class="external-link"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Col+d%27Aspin"
+                    rel="noopener"
+                    target="_blank"
+                    >Aspin</a
+                  >, de
+                  <a
+                    class="external-link"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Col+de+Peyresourde"
+                    rel="noopener"
+                    target="_blank"
+                    >Peyresourde</a
+                  >
+                  et le
+                  <a
+                    class="external-link"
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Col+du+Tourmalet"
+                    rel="noopener"
+                    target="_blank"
+                    >Tourmalet</a
+                  >
+                  à portée de roue. Le Nistos et la Neste sont connus pour leurs
+                  truites.
+                </p>
+              </article>
+
+              <article data-reveal class="flex flex-col gap-2">
+                <h3 class="season" data-i18n="seasons.autumn">En automne</h3>
+                <p class="text-sm text-muted" data-i18n="seasons.autumnText">
+                  De mi-septembre à mi-octobre, c'est la saison du brame du
+                  cerf. On l'entend surtout le soir, et avec un peu de chance on
+                  aperçoit les cerfs à la tombée de la nuit.
+                </p>
+              </article>
+
+              <article data-reveal class="flex flex-col gap-2">
+                <h3 class="season" data-i18n="seasons.children">
+                  Avec des enfants
+                </h3>
+                <p class="text-sm text-muted" data-i18n="seasons.childrenText">
+                  Lit bébé, chaise haute, jeux de société et un grand terrain
+                  pour courir. Quand il pleut, il y a le
+                  <a
+                    class="external-link"
+                    href="https://www.parc-lannemezan.com/"
+                    rel="noopener"
+                    target="_blank"
+                    >parc de la Demi-Lune</a
+                  >
+                  à Lannemezan et plusieurs piscines et espaces aquatiques dans
+                  la vallée.
+                </p>
+              </article>
             </div>
 
-            <a
-              class="location-card-primary"
-              href="https://www.n-py.com/"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/alpine-skiing.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.ski">Ski alpin</span>
-                <span class="block text-xs italic"
-                  >Saint-Lary, Piau, Peyragudes, Val-Louron</span
-                >
-              </span>
-              <span class="location-tag">40&nbsp;km</span>
-            </a>
-
-            <div class="location-card-primary">
-              <img
-                class="drawing"
-                src="static/drawings/hot-baths.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.pools"
-                  >Piscines et bains chauds</span
-                >
-                <span class="block text-xs italic">
-                  <a
-                    class="external-link"
-                    href="https://ocybelles.fr/"
-                    rel="noopener"
-                    target="_blank"
-                    >Les Ocybelles</a
-                  >,
-                  <a
-                    class="external-link"
-                    href="https://www.balnea.fr"
-                    rel="noopener"
-                    target="_blank"
-                    >Balnéa</a
-                  >,
-                  <a
-                    class="external-link"
-                    href="https://www.aquensis.fr"
-                    rel="noopener"
-                    target="_blank"
-                    >Aquensis</a
+            <div class="gap-x-3 sm:columns-2 md:columns-3" data-cascade="40">
+              <a
+                class="location-card-primary"
+                href="https://nistos-ski.fr"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/nordic-skiing.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.nordic"
+                    >Espace nordique de Nistos</span
+                  >
+                  <span
+                    class="block text-xs italic"
+                    data-i18n="surroundings.nordicText"
+                    >Ski de fond, raquettes, luge</span
                   >
                 </span>
-              </span>
-              <span class="location-tag" data-i18n="surroundings.dayTrip"
-                >Journée</span
-              >
-            </div>
-
-            <div class="location-card-primary">
-              <img
-                class="drawing"
-                src="static/drawings/mountain-peak.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.sites"
-                  >Les grands sites des Pyrénées</span
+                <span class="location-tag" data-i18n="surroundings.nearby"
+                  >Tout près</span
                 >
-                <span class="block text-xs italic">
-                  <a
-                    class="external-link"
-                    href="https://picdumidi.com"
-                    rel="noopener"
-                    target="_blank"
-                    >Pic du Midi</a
-                  >,
-                  <a
-                    class="external-link"
-                    href="https://www.tourisme-occitanie.com/fr/fiche/itineraire/le-cirque-de-gavarnie-gavarnie_TFOITIMIP0650000084/"
-                    rel="noopener"
-                    target="_blank"
-                    data-i18n="surroundings.gavarnie"
-                    >cirque de Gavarnie</a
-                  >,
-                  <a
-                    class="external-link"
-                    href="https://www.tourisme-occitanie.com/fr/fiche/patrimoine-naturel/lacs-de-neouvielle-aragnouet_TFOPNAMIP0650000124/"
-                    rel="noopener"
-                    target="_blank"
-                    data-i18n="surroundings.neouvielle"
-                    >lacs du Néouvielle</a
-                  >,
-                  <a
-                    class="external-link"
-                    href="https://www.lourdes.fr/"
-                    rel="noopener"
-                    target="_blank"
-                    >Lourdes</a
+              </a>
+
+              <a
+                class="location-card-primary"
+                href="https://www.visorando.com/randonnee-nistos.html"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/hiking.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.hiking"
+                    >Randonnées à pied et à VTT</span
+                  >
+                  <span
+                    class="block text-xs italic"
+                    data-i18n="surroundings.hikingText"
+                    >Au départ de Nistos et de Seich</span
                   >
                 </span>
-              </span>
-              <span class="location-tag" data-i18n="surroundings.dayTrip"
-                >Journée</span
+                <span class="location-tag" data-i18n="surroundings.nearby"
+                  >Tout près</span
+                >
+              </a>
+
+              <a
+                class="location-card-primary"
+                href="https://www.parc-lannemezan.com/"
+                rel="noopener"
+                target="_blank"
               >
+                <img
+                  class="drawing"
+                  src="static/drawings/park.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.park"
+                    >Parc de loisirs de la Demi-Lune</span
+                  >
+                  <span class="block text-xs italic">Lannemezan</span>
+                </span>
+                <span class="location-tag">25&nbsp;km</span>
+              </a>
+
+              <div class="location-card-primary">
+                <img
+                  class="drawing"
+                  src="static/drawings/castle.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.heritage"
+                    >Grottes et châteaux</span
+                  >
+                  <span class="block text-xs italic">
+                    <a
+                      class="external-link"
+                      href="https://grottesdegargas.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      data-i18n="surroundings.gargas"
+                      >Grottes de Gargas</a
+                    >,
+                    <a
+                      class="external-link"
+                      href="https://www.chateaudemauvezin.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      data-i18n="surroundings.mauvezin"
+                      >château de Mauvezin</a
+                    >,
+                    <a
+                      class="external-link"
+                      href="https://gouffre-esparros.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      data-i18n="surroundings.esparros"
+                      >gouffre d'Esparros</a
+                    >,
+                    <a
+                      class="external-link"
+                      href="https://www.st-bertrand.com/"
+                      rel="noopener"
+                      target="_blank"
+                      >Saint-Bertrand-de-Comminges</a
+                    >
+                  </span>
+                </span>
+                <span class="location-tag">25&nbsp;km</span>
+              </div>
+
+              <a
+                class="location-card-primary"
+                href="https://www.n-py.com/"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/alpine-skiing.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.ski">Ski alpin</span>
+                  <span class="block text-xs italic"
+                    >Saint-Lary, Piau, Peyragudes, Val-Louron</span
+                  >
+                </span>
+                <span class="location-tag">40&nbsp;km</span>
+              </a>
+
+              <div class="location-card-primary">
+                <img
+                  class="drawing"
+                  src="static/drawings/hot-baths.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.pools"
+                    >Piscines et bains chauds</span
+                  >
+                  <span class="block text-xs italic">
+                    <a
+                      class="external-link"
+                      href="https://ocybelles.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      >Les Ocybelles</a
+                    >,
+                    <a
+                      class="external-link"
+                      href="https://www.balnea.fr"
+                      rel="noopener"
+                      target="_blank"
+                      >Balnéa</a
+                    >,
+                    <a
+                      class="external-link"
+                      href="https://www.aquensis.fr"
+                      rel="noopener"
+                      target="_blank"
+                      >Aquensis</a
+                    >
+                  </span>
+                </span>
+                <span class="location-tag" data-i18n="surroundings.dayTrip"
+                  >Journée</span
+                >
+              </div>
+
+              <div class="location-card-primary">
+                <img
+                  class="drawing"
+                  src="static/drawings/mountain-peak.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.sites"
+                    >Les grands sites des Pyrénées</span
+                  >
+                  <span class="block text-xs italic">
+                    <a
+                      class="external-link"
+                      href="https://picdumidi.com"
+                      rel="noopener"
+                      target="_blank"
+                      >Pic du Midi</a
+                    >,
+                    <a
+                      class="external-link"
+                      href="https://www.tourisme-occitanie.com/fr/fiche/itineraire/le-cirque-de-gavarnie-gavarnie_TFOITIMIP0650000084/"
+                      rel="noopener"
+                      target="_blank"
+                      data-i18n="surroundings.gavarnie"
+                      >cirque de Gavarnie</a
+                    >,
+                    <a
+                      class="external-link"
+                      href="https://www.tourisme-occitanie.com/fr/fiche/patrimoine-naturel/lacs-de-neouvielle-aragnouet_TFOPNAMIP0650000124/"
+                      rel="noopener"
+                      target="_blank"
+                      data-i18n="surroundings.neouvielle"
+                      >lacs du Néouvielle</a
+                    >,
+                    <a
+                      class="external-link"
+                      href="https://www.lourdes.fr/"
+                      rel="noopener"
+                      target="_blank"
+                      >Lourdes</a
+                    >
+                  </span>
+                </span>
+                <span class="location-tag" data-i18n="surroundings.dayTrip"
+                  >Journée</span
+                >
+              </div>
+
+              <a
+                class="location-card-secondary"
+                href="https://tourisme-neste-barousse.fr/"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/tourist-office.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.office"
+                    >Office de tourisme</span
+                  >
+                  <span class="block text-xs italic">Neste-Barousse</span>
+                </span>
+                <span class="location-tag">10&nbsp;km</span>
+              </a>
+
+              <a
+                class="location-card-secondary"
+                href="https://coeurdespyrenees.com/"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/tourist-office.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.office"
+                    >Office de tourisme</span
+                  >
+                  <span class="block text-xs italic">Cœur des Pyrénées</span>
+                </span>
+                <span class="location-tag">25&nbsp;km</span>
+              </a>
+
+              <a
+                class="location-card-secondary"
+                href="https://www.ville-bagneresdebigorre.fr/office-de-tourisme"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/tourist-office.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.office"
+                    >Office de tourisme</span
+                  >
+                  <span class="block text-xs italic">Bagnères-de-Bigorre</span>
+                </span>
+                <span class="location-tag">45&nbsp;km</span>
+              </a>
+
+              <a
+                class="location-card-secondary"
+                href="https://www.saintlary.com/"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/tourist-office.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.office"
+                    >Office de tourisme</span
+                  >
+                  <span class="block text-xs italic">Saint-Lary-Soulan</span>
+                </span>
+                <span class="location-tag">45&nbsp;km</span>
+              </a>
+
+              <a
+                class="location-card-secondary"
+                href="https://www.pyrenees2vallees.com/vallee-du-louron"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/tourist-office.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.office"
+                    >Office de tourisme</span
+                  >
+                  <span class="block text-xs italic">Vallée du Louron</span>
+                </span>
+                <span class="location-tag">50&nbsp;km</span>
+              </a>
+
+              <a
+                class="location-card-secondary"
+                href="https://www.pyrenees31.com"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  class="drawing"
+                  src="static/drawings/tourist-office.svg"
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
+                <span>
+                  <span data-i18n="surroundings.office"
+                    >Office de tourisme</span
+                  >
+                  <span class="block text-xs italic">Bagnères-de-Luchon</span>
+                </span>
+                <span class="location-tag">50&nbsp;km</span>
+              </a>
             </div>
-
-            <a
-              class="location-card-secondary"
-              href="https://tourisme-neste-barousse.fr/"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/tourist-office.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.office">Office de tourisme</span>
-                <span class="block text-xs italic">Neste-Barousse</span>
-              </span>
-              <span class="location-tag">10&nbsp;km</span>
-            </a>
-
-            <a
-              class="location-card-secondary"
-              href="https://coeurdespyrenees.com/"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/tourist-office.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.office">Office de tourisme</span>
-                <span class="block text-xs italic">Cœur des Pyrénées</span>
-              </span>
-              <span class="location-tag">25&nbsp;km</span>
-            </a>
-
-            <a
-              class="location-card-secondary"
-              href="https://www.ville-bagneresdebigorre.fr/office-de-tourisme"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/tourist-office.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.office">Office de tourisme</span>
-                <span class="block text-xs italic">Bagnères-de-Bigorre</span>
-              </span>
-              <span class="location-tag">45&nbsp;km</span>
-            </a>
-
-            <a
-              class="location-card-secondary"
-              href="https://www.saintlary.com/"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/tourist-office.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.office">Office de tourisme</span>
-                <span class="block text-xs italic">Saint-Lary-Soulan</span>
-              </span>
-              <span class="location-tag">45&nbsp;km</span>
-            </a>
-
-            <a
-              class="location-card-secondary"
-              href="https://www.pyrenees2vallees.com/vallee-du-louron"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/tourist-office.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.office">Office de tourisme</span>
-                <span class="block text-xs italic">Vallée du Louron</span>
-              </span>
-              <span class="location-tag">50&nbsp;km</span>
-            </a>
-
-            <a
-              class="location-card-secondary"
-              href="https://www.pyrenees31.com"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                class="drawing"
-                src="static/drawings/tourist-office.svg"
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-              />
-              <span>
-                <span data-i18n="surroundings.office">Office de tourisme</span>
-                <span class="block text-xs italic">Bagnères-de-Luchon</span>
-              </span>
-              <span class="location-tag">50&nbsp;km</span>
-            </a>
           </div>
         </section>
 
@@ -1201,7 +1221,7 @@
                 <dd data-i18n="prices.minimumValue">2&nbsp;nuits</dd>
               </div>
               <div>
-                <dt data-i18n="prices.linen">Lits faits et serviettes</dt>
+                <dt data-i18n="prices.linen">Draps et serviettes</dt>
                 <dd data-i18n="prices.included">Fournis</dd>
               </div>
               <div>
