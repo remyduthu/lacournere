@@ -1,28 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Young Serif", ui-serif, Georgia, serif;
 
-  /* Warm peach background with orange and indigo accents, from the original site. */
-  --color-paper: var(--color-orange-50);
-  --color-sand: var(--color-orange-100);
-  --color-ink: var(--color-stone-800);
-  --color-muted: var(--color-stone-600);
-  --color-line: var(--color-orange-200);
-
-  /* Orange, pink and indigo tones used for the soft glows. */
-  --color-glow-warm: rgb(251 146 60 / 0.7);
-  --color-glow-pink: rgb(244 114 182 / 0.55);
-  --color-glow-cool: rgb(129 140 248 / 0.6);
+  /* Snow and fir, from the sunset over the snow: cool white, fir green and
+     slate blue, with a touch of apricot. */
+  --color-paper: #f5f7f6;
+  --color-sand: #e8eeeb;
+  --color-ink: #23423a;
+  --color-muted: #5a6866;
+  --color-line: #dce3e0;
+  --color-primary: #4f7f6b;
+  --color-primary-tint: #dce8e2;
+  --color-secondary: #4e6a88;
+  --color-secondary-tint: #dde4ec;
+  --color-accent: #e8a87c;
+  --color-accent-strong: #23423a;
 }
 
 @utility button {
-  @apply relative isolate inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium tracking-wide transition duration-300;
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium tracking-wide transition duration-300;
 }
 
 /* Tinted card with a distance tag, laid out in newspaper-style columns. */
 @utility location-card {
-  @apply mb-3 flex w-full break-inside-avoid flex-col items-start gap-2 rounded-md border px-4 py-3 text-stone-700 transition duration-300;
+  @apply mb-3 grid w-full break-inside-avoid grid-cols-[2.5rem_1fr] items-start gap-x-4 gap-y-2 rounded-sm border border-transparent px-4 py-3 text-ink transition duration-300;
 }
 
 @layer base {
@@ -32,7 +35,7 @@
   }
 
   body {
-    @apply bg-paper font-light tracking-wide text-ink antialiased;
+    @apply bg-paper font-normal tracking-wide text-ink antialiased;
   }
 
   /* The full-width hero image must not create a sideways scroll on phones. */
@@ -41,7 +44,7 @@
   }
 
   h2 {
-    @apply font-serif text-3xl font-medium tracking-tight text-balance sm:text-4xl;
+    @apply font-serif text-3xl text-balance sm:text-4xl;
   }
 
   h3 {
@@ -50,53 +53,31 @@
 }
 
 @layer components {
+  /* Phone and email links: dark text, underlined on hover, like links to other websites. */
   .link {
-    @apply font-normal underline decoration-orange-300 decoration-2 underline-offset-4 transition-colors hover:decoration-orange-500;
+    @apply font-normal text-ink underline-offset-4 hover:underline;
   }
 
+  /* Links to other websites: a small arrow after the text, underlined on hover. */
   .external-link {
-    @apply font-normal text-indigo-600 after:content-['_↗'] hover:underline;
+    @apply font-normal text-ink underline-offset-4 hover:underline;
+  }
+
+  .external-link::after {
+    content: "↗";
+    @apply ml-0.5 text-[0.75em] text-muted opacity-60;
   }
 
   .nav-item {
     @apply rounded-md p-2 text-xs uppercase transition-colors duration-300 hover:bg-white/15 sm:tracking-widest;
   }
 
-  .button-primary {
-    @apply button text-white;
-    --button-background: var(--color-ink);
-  }
-
   .button-light {
-    @apply button text-ink;
-    --button-background: rgb(255 255 255 / 0.92);
+    @apply button bg-white/90 text-ink hover:bg-white;
   }
 
-  .card {
-    @apply relative rounded-md border border-line bg-white p-6;
-  }
-
-  /* Soft light that follows the cursor across a card. */
-  .card::after {
-    content: "";
-    @apply pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-500;
-    background: radial-gradient(
-      22rem circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
-      rgb(251 146 60 / 0.1),
-      transparent 70%
-    );
-  }
-
-  .card:hover::after {
-    @apply opacity-100;
-  }
-
-  .card-orange {
-    @apply rounded-md border border-orange-200 bg-orange-100 p-6;
-  }
-
-  .card-indigo {
-    @apply rounded-md border border-indigo-200 bg-indigo-100 p-6;
+  .season {
+    @apply font-serif text-xl font-normal;
   }
 
   /* Short facts joined by bullets, as on the original site. */
@@ -123,11 +104,11 @@
 
   .checklist li::before {
     content: "";
-    @apply mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-orange-400;
+    @apply mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-accent;
   }
 
   .gallery-item {
-    @apply relative block cursor-zoom-in overflow-hidden rounded-md bg-sand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400;
+    @apply relative block cursor-zoom-in overflow-hidden rounded-sm bg-sand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
   }
 
   .gallery-item img {
@@ -138,53 +119,71 @@
     @apply brightness-75;
   }
 
-  /* Whole-card links get the same hover as the other cards, with an arrow showing they lead elsewhere. */
-  a:is(.location-card-indigo, .location-card-orange) {
-    @apply relative isolate overflow-hidden pr-10 hover:border-ink;
+  /* Whole-card links get a dark border on hover, with an arrow showing they lead elsewhere. */
+  a:is(.location-card-primary, .location-card-secondary) {
+    @apply relative pr-10 hover:border-ink;
   }
 
-  a:is(.location-card-indigo, .location-card-orange)::after {
+  a:is(.location-card-primary, .location-card-secondary)::after {
     content: "↗";
-    @apply absolute top-3 right-4 opacity-50 transition duration-300;
+    @apply absolute top-3 right-3 text-xs text-muted opacity-40 transition duration-300;
   }
 
-  a:is(.location-card-indigo, .location-card-orange):hover::after {
-    @apply translate-x-0.5 -translate-y-0.5 opacity-100;
+  a:is(.location-card-primary, .location-card-secondary):hover::after {
+    @apply opacity-80;
   }
 
-  /* Soft light that follows the cursor across a card. */
-  a:is(.location-card-indigo, .location-card-orange)::before {
-    content: "";
-    @apply pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500;
-    background: radial-gradient(
-      22rem circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
-      rgb(251 146 60 / 0.1),
-      transparent 70%
-    );
+  .location-card-primary {
+    @apply location-card bg-primary-tint;
   }
 
-  a:is(.location-card-indigo, .location-card-orange):hover::before {
-    @apply opacity-100;
+  .location-card-secondary {
+    @apply location-card bg-secondary-tint;
   }
 
-  .location-card-indigo {
-    @apply location-card border-indigo-200 bg-indigo-100;
-  }
-
-  .location-card-orange {
-    @apply location-card border-orange-200 bg-orange-100;
+  /* Line drawing of the activity, blended into the card's tint. */
+  .location-card-primary .drawing,
+  .location-card-secondary .drawing {
+    @apply row-span-2 size-10 mix-blend-multiply;
   }
 
   .location-tag {
-    @apply rounded-md px-2 text-sm text-white tabular-nums;
+    @apply justify-self-start rounded-sm px-2 text-sm text-white tabular-nums;
   }
 
-  .location-card-indigo .location-tag {
-    @apply bg-indigo-400;
+  .location-card-primary .location-tag {
+    @apply bg-primary;
   }
 
-  .location-card-orange .location-tag {
-    @apply bg-orange-400;
+  .location-card-secondary .location-tag {
+    @apply bg-secondary;
+  }
+
+  /* Booking sites as a plain list, each line linking out. */
+  .booking-link {
+    @apply flex items-center gap-4 border-b border-line py-3;
+  }
+
+  /* Rate sheet with dotted leaders between each item and its price. */
+  .rates {
+    @apply flex flex-col gap-3 border-t-2 border-ink pt-4;
+  }
+
+  .rates div {
+    @apply flex items-baseline gap-3;
+  }
+
+  .rates dt {
+    @apply flex flex-1 items-baseline gap-3 whitespace-nowrap;
+  }
+
+  .rates dt::after {
+    content: "";
+    @apply min-w-4 flex-1 border-b border-dotted border-muted;
+  }
+
+  .rates dd {
+    @apply max-w-[60%] text-right font-normal;
   }
 
   .faq {
@@ -192,13 +191,13 @@
   }
 
   .faq summary {
-    @apply flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-normal transition-colors hover:text-orange-700;
+    @apply flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-normal transition-colors hover:text-accent-strong;
   }
 
   /* Plus sign that turns into a cross when the answer is open. */
   .faq summary::after {
     content: "+";
-    @apply flex size-7 shrink-0 items-center justify-center rounded-md bg-orange-100 text-lg leading-none text-orange-700 transition-transform duration-300;
+    @apply flex size-7 shrink-0 items-center justify-center rounded-md bg-sand text-lg leading-none text-accent-strong transition-transform duration-300;
   }
 
   .faq[open] summary::after {
@@ -245,7 +244,7 @@
   }
 }
 
-/* Transparent over the hero, then the plain peach bar of the original site once the page scrolls. */
+/* Transparent over the hero, then a plain bar once the page scrolls. */
 .site-header {
   transition:
     background-color 300ms ease,
@@ -257,126 +256,7 @@
 }
 
 .site-header[data-scrolled="true"] .nav-item:hover {
-  @apply bg-orange-100;
-}
-
-/* Soft orange-to-indigo halo behind an element. */
-.glow {
-  position: relative;
-  isolation: isolate;
-}
-
-.glow::before {
-  content: "";
-  position: absolute;
-  inset: -3rem;
-  z-index: -1;
-  background:
-    radial-gradient(
-      45% 60% at 15% 30%,
-      var(--color-glow-warm),
-      transparent 70%
-    ),
-    radial-gradient(
-      45% 60% at 55% 75%,
-      var(--color-glow-pink),
-      transparent 70%
-    ),
-    radial-gradient(40% 55% at 90% 25%, var(--color-glow-cool), transparent 70%);
-  filter: blur(48px);
-  opacity: 0.3;
-  animation: glow-drift 14s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-/* Lighter halo for large areas such as the photo grid. */
-.glow-soft::before {
-  inset: -1.5rem;
-  opacity: 0.12;
-  filter: blur(56px);
-}
-
-/* Thin gradient border that catches the light. */
-.glow-border {
-  border: 1px solid transparent;
-  background:
-    linear-gradient(white, white) padding-box,
-    linear-gradient(
-        120deg,
-        var(--color-glow-warm),
-        var(--color-glow-cool),
-        var(--color-line) 60%
-      )
-      border-box;
-}
-
-@keyframes glow-drift {
-  to {
-    transform: translate3d(1.5rem, -1rem, 0) scale(1.05);
-  }
-}
-
-/* Shimmering halo behind the main buttons. */
-@property --shimmer-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.button-primary::before,
-.button-light::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  z-index: -2;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--shimmer-angle),
-    transparent 0deg,
-    var(--color-glow-warm) 60deg,
-    var(--color-glow-pink) 120deg,
-    transparent 180deg,
-    var(--color-glow-cool) 260deg,
-    transparent 330deg
-  );
-  filter: blur(6px);
-  opacity: 0.2;
-  transition:
-    opacity 400ms ease,
-    inset 400ms ease;
-  animation: shimmer-spin 5s linear infinite;
-}
-
-.button-primary:hover::before,
-.button-light:hover::before {
-  inset: -4px;
-  opacity: 0.4;
-}
-
-/* The button fill sits between the halo and the label, so the halo only shows around the edges. */
-.button-primary::after,
-.button-light::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  background: var(--button-background);
-  transition: background-color 300ms ease;
-}
-
-.button-primary:hover {
-  --button-background: var(--color-stone-700);
-}
-
-.button-light:hover {
-  --button-background: white;
-}
-
-@keyframes shimmer-spin {
-  to {
-    --shimmer-angle: 360deg;
-  }
+  @apply bg-sand;
 }
 
 /* Content eases in as it scrolls into view. Only hidden when scripts run. */
@@ -434,9 +314,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   #lightbox[open],
-  .glow::before,
-  .button-primary::before,
-  .button-light::before,
   .hero-image,
   .hero-content > * {
     animation: none;
