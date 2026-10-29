@@ -15,6 +15,9 @@
     <meta name="theme-color" content="#F5F7F6" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://gite.lacournere.fr/" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -242,11 +245,11 @@
               type="button"
             >
               <img
-                src="static/images/house/fireplace.jpg"
-                alt="Le coin cheminée"
-                data-i18n-alt="photos.fireplace"
+                src="static/images/house/outside.jpg"
+                alt="La maison"
+                data-i18n-alt="photos.outside"
                 width="1600"
-                height="1067"
+                height="1200"
                 loading="lazy"
               />
             </button>
@@ -281,25 +284,11 @@
                   type="button"
                 >
                   <img
-                    src="static/images/house/outside.jpg"
-                    alt="La maison"
-                    data-i18n-alt="photos.outside"
+                    src="static/images/house/terrace.jpg"
+                    alt="La terrasse, face à la montagne"
+                    data-i18n-alt="photos.terrace"
                     width="1600"
-                    height="1067"
-                    loading="lazy"
-                  />
-                </button>
-                <button
-                  class="gallery-item aspect-square sm:aspect-auto"
-                  data-gallery
-                  type="button"
-                >
-                  <img
-                    src="static/images/house/living-room-view.jpg"
-                    alt="Le salon, ouvert sur la montagne"
-                    data-i18n-alt="photos.livingRoomView"
-                    width="1600"
-                    height="1067"
+                    height="1200"
                     loading="lazy"
                   />
                 </button>
@@ -312,8 +301,22 @@
                     src="static/images/house/living-room.jpg"
                     alt="La pièce de vie"
                     data-i18n-alt="photos.livingRoom"
-                    width="1600"
-                    height="1067"
+                    width="1024"
+                    height="768"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  class="gallery-item aspect-square sm:aspect-auto"
+                  data-gallery
+                  type="button"
+                >
+                  <img
+                    src="static/images/house/dining-table.jpg"
+                    alt="La grande table"
+                    data-i18n-alt="photos.diningTable"
+                    width="768"
+                    height="1024"
                     loading="lazy"
                   />
                 </button>
@@ -327,7 +330,7 @@
                     alt="Une chambre"
                     data-i18n-alt="photos.bedroom"
                     width="1600"
-                    height="1067"
+                    height="1200"
                     loading="lazy"
                   />
                 </button>
@@ -337,11 +340,11 @@
                   type="button"
                 >
                   <img
-                    src="static/images/house/courtyard-view.jpg"
-                    alt="La vue depuis la cour"
-                    data-i18n-alt="photos.courtyardView"
-                    width="1600"
-                    height="1067"
+                    src="static/images/nistos/snow.jpg"
+                    alt="Nistos sous la neige"
+                    data-i18n-alt="photos.snow"
+                    width="1280"
+                    height="914"
                     loading="lazy"
                   />
                 </button>
@@ -358,10 +361,10 @@
                 type="button"
               >
                 <img
-                  src="static/images/house/thumbnails/dining-table.jpg"
-                  data-full="static/images/house/dining-table.jpg"
-                  alt="La grande table"
-                  data-i18n-alt="photos.diningTable"
+                  src="static/images/house/thumbnails/bedroom-2.jpg"
+                  data-full="static/images/house/bedroom-2.jpg"
+                  alt="Une chambre"
+                  data-i18n-alt="photos.bedroom"
                   loading="lazy"
                 />
               </button>
@@ -371,8 +374,8 @@
                 type="button"
               >
                 <img
-                  src="static/images/house/thumbnails/bedroom-4.jpg"
-                  data-full="static/images/house/bedroom-4.jpg"
+                  src="static/images/house/thumbnails/bedroom-3.jpg"
+                  data-full="static/images/house/bedroom-3.jpg"
                   alt="Une chambre"
                   data-i18n-alt="photos.bedroom"
                   loading="lazy"
@@ -410,10 +413,10 @@
                 type="button"
               >
                 <img
-                  src="static/images/house/thumbnails/shower.jpg"
-                  data-full="static/images/house/shower.jpg"
-                  alt="La douche du rez-de-chaussée"
-                  data-i18n-alt="photos.shower"
+                  src="static/images/nistos/thumbnails/sunset.jpg"
+                  data-full="static/images/nistos/sunset.jpg"
+                  alt="Coucher de soleil sur les pistes de Nistos"
+                  data-i18n-alt="photos.sunset"
                   loading="lazy"
                 />
               </button>
@@ -423,10 +426,10 @@
                 type="button"
               >
                 <img
-                  src="static/images/house/thumbnails/barn-view.jpg"
-                  data-full="static/images/house/barn-view.jpg"
-                  alt="La vue depuis la grange"
-                  data-i18n-alt="photos.barnView"
+                  src="static/images/nistos/thumbnails/ridges.jpg"
+                  data-full="static/images/nistos/ridges.jpg"
+                  alt="La chaîne des Pyrénées depuis Nistos"
+                  data-i18n-alt="photos.ridges"
                   loading="lazy"
                 />
               </button>
@@ -435,54 +438,6 @@
 
           <!-- Rooms and equipment. -->
           <div class="grid gap-3 md:grid-cols-3">
-            <button
-              class="gallery-item aspect-[3/2]"
-              data-gallery
-              data-reveal
-              type="button"
-            >
-              <img
-                src="static/images/house/kitchen.jpg"
-                alt="La cuisine"
-                data-i18n-alt="photos.kitchen"
-                width="1600"
-                height="1067"
-                loading="lazy"
-              />
-            </button>
-
-            <button
-              class="gallery-item aspect-[3/2]"
-              data-gallery
-              data-reveal
-              type="button"
-            >
-              <img
-                src="static/images/house/bedroom-3.jpg"
-                alt="Une chambre"
-                data-i18n-alt="photos.bedroom"
-                width="1600"
-                height="1067"
-                loading="lazy"
-              />
-            </button>
-
-            <button
-              class="gallery-item aspect-[3/2]"
-              data-gallery
-              data-reveal
-              type="button"
-            >
-              <img
-                src="static/images/house/courtyard.jpg"
-                alt="La cour"
-                data-i18n-alt="photos.courtyard"
-                width="1600"
-                height="1067"
-                loading="lazy"
-              />
-            </button>
-
             <div data-reveal class="flex flex-col gap-4 md:p-8">
               <h3 data-i18n="rooms.groundFloor">Au rez-de-chaussée</h3>
               <ul class="checklist">
@@ -1612,6 +1567,16 @@
           }
         }
       ]
+    }
+  </script>
+  <!-- Gives Google the name to show above the result instead of the domain. -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Maison Lacournère",
+      "alternateName": "Gîte Lacournère",
+      "url": "https://gite.lacournere.fr/"
     }
   </script>
 

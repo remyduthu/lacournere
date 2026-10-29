@@ -1,8 +1,6 @@
 // The page is written in French; English visitors get these translations instead.
 // French stays in the HTML so search engines index the page in the main visitors' language.
 const english = {
-  "page.title":
-    "Maison Lacournère | 4-star holiday home in Nistos, Hautes-Pyrénées",
   "navigation.label": "Main navigation",
   "navigation.house": "The house",
   "navigation.surroundings": "Surroundings",
@@ -22,18 +20,15 @@ const english = {
   "house.text":
     "Surrounded by greenery, Maison Lacournère is a place to slow down and relax. With family or friends, we welcome you to Nistos, a small mountain village with rich, unspoilt wildlife and plants. The house gets plenty of sun and looks out onto the mountains, and the garden is a natural playground for grown-ups and children alike. Enjoy a raclette by the fire and a barbecue in summer (or the&nbsp;other way round).",
   "photos.outside": "The house",
-  "photos.livingRoomView": "The living room, opening onto the mountains",
+  "photos.terrace": "The terrace, facing the mountains",
   "photos.livingRoom": "The living area",
   "photos.bedroom": "A bedroom",
-  "photos.courtyardView": "The view from the courtyard",
   "photos.diningTable": "The big table",
-  "photos.kitchen": "The kitchen",
-  "photos.fireplace": "The fireplace corner",
+  "photos.snow": "Nistos under the snow",
   "photos.bedroomTwin": "The bedroom with two single beds",
   "photos.bathroom": "The upstairs bathroom",
-  "photos.shower": "The ground-floor shower",
-  "photos.courtyard": "The courtyard",
-  "photos.barnView": "The view from the barn",
+  "photos.sunset": "Sunset over the Nistos slopes",
+  "photos.ridges": "The Pyrenees seen from Nistos",
   "rooms.groundFloor": "Ground floor",
   "rooms.kitchen":
     "Equipped kitchen: dishwasher, oven, microwave, fridge-freezer, kettle",
@@ -157,7 +152,6 @@ translatedAttributes.forEach(attribute => {
     french.set(element, saved)
   })
 })
-const frenchTitle = document.title
 
 const setLanguage = language => {
   const isEnglish = language === "en"
@@ -175,7 +169,6 @@ const setLanguage = language => {
       )
     })
   })
-  document.title = isEnglish ? english["page.title"] : frenchTitle
   document.documentElement.lang = language
 
   // The button offers the other language, written in that language.
@@ -196,7 +189,10 @@ const readSavedLanguage = () => {
 }
 
 // A language picked with the button wins over the browser's language.
-const browserLanguage = navigator.language.startsWith("fr") ? "fr" : "en"
+// Search engine crawlers report an English browser, so they always get French.
+const isCrawler = /bot|crawl|spider/i.test(navigator.userAgent)
+const browserLanguage =
+  isCrawler || navigator.language.startsWith("fr") ? "fr" : "en"
 let currentLanguage = readSavedLanguage() ?? browserLanguage
 if (currentLanguage === "en") setLanguage("en")
 
